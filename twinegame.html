@@ -9,75 +9,83 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play twinegame.</tw-noscript></noscript></tw-story>
-<tw-storydata name="twinegame" startnode="1" creator="Twine" creator-version="2.3.13" ifid="2FB68BE1-5079-4AB3-9B24-265EB65B0884" zoom="1" format="Harlowe" format-version="3.2.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="bedroom" color="gray"></tw-tag><tw-passagedata pid="1" name="Intro" tags="" position="1100,209.5" size="100,100">(set: $bluekey to false)(set: $blackkey to false)(set: $nocoffee to false)(set: $flashligth to false)(set: $gotsilverkey to false)(set: $clean to false)(set: $hours to 7)(set: $seconds to 44)Bob wakes up in his apartment in the city. He is a human. He has eyes and eyebrows and eyelashes and a nose. Perhaps his most distinctive feature is how average a person he is. He looks around his room.
+<tw-storydata name="twinegame" startnode="87" creator="Twine" creator-version="2.3.13" ifid="2FB68BE1-5079-4AB3-9B24-265EB65B0884" zoom="1" format="Harlowe" format-version="3.2.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&display=swap');
+h1 {
+  font-size: 350px;
+  font-family: 'Satisfy', cursive;
+  text-shadow: 5px 5px 10px #ff0000;
+}
+
+tw-story {
+  font-family: 'Comic Neue', cursive;
+}
+
+
+
+</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="bedroom" color="gray"></tw-tag><tw-passagedata pid="1" name="intro" tags="" position="1069,262.5" size="100,100">(set: $keycard to false)(set: $poop to false)(set: $rippedpainting to false)(set: $moldedcheese to false)(set: $midnight to false)(set: $bluekey to false)(set: $blackkey to false)(set: $nocoffee to false)(set: $flashlight to false)(set: $silverkey to false)(set: $clean to false)(set: $hours to 7)(set: $seconds to 44)Bob wakes up in his apartment in the city. He is a human. He has eyes and eyebrows and eyelashes and a nose. Perhaps his most distinctive feature is how average a person he is. He looks around his room.
 
 [[check the time on the clock-&gt;check the time on the clock]]
 [[go back to sleep]]
 [[leave the room]]
-[[check under the bed]]</tw-passagedata><tw-passagedata pid="2" name="check the time on the clock" tags="" position="936,374.5" size="100,100">(if: $seconds &lt; 59)[(set: $seconds to it + 1)](else:)[(set: $hours to it + 1)(set: $seconds to 0)]Bob checks the clock, it reads $hours:(if: $seconds &lt; 10)[0]$seconds. There is not much else to say here.
+[[check under the bed]]</tw-passagedata><tw-passagedata pid="2" name="check the time on the clock" tags="" position="887,397.5" size="100,100">(if: $seconds &lt; 59)[(set: $seconds to it + 1)](else:)[(set: $hours to it + 1)(set: $seconds to 0)]Bob checks the clock, it reads $hours:(if: $seconds &lt; 10)[0]$seconds. There is not much else to say here.
 
 [[go back to sleep]]
 [[leave the room]]
-</tw-passagedata><tw-passagedata pid="3" name="go back to sleep" tags="" position="1389,390.5" size="100,100">(set: $clean to false)Bob goes back to sleep, the day goes by while he lies on his bed, a new day begins.(if:visits &gt;= 3)[ Is he actually going to do something today or just keep sleeping?]
+</tw-passagedata><tw-passagedata pid="3" name="go back to sleep" tags="" position="1395,387.5" size="100,100">(set: $message to (random: 1, 7))(set: $clean to false)Bob goes back to sleep, the day goes by while he lies on his bed, a new day begins.(if:visits &gt;= 3)[ Is he actually going to do something today or just keep sleeping?]
 
-[[wake up-&gt;Intro]]</tw-passagedata><tw-passagedata pid="4" name="leave the room" tags="" position="1185,390.5" size="100,100">(if: $clean is false)[(set: $clean to true)Bob leaves the room and goes on his usual routine of brushing his teeth and eating breakfast.](else:)[Bob leaves the room.]
+//Bob&#39;s phone suddenly buzzes, a strange message appears on the screen, it says &quot;READ THIS MESSAGE&quot;//
+
+(if: $message is 1)[(t8n:&quot;dissolve&quot;)+(t8n-time:3s)+(link-rerun:&quot;read the message&quot;)[(dialog: &quot;Beware. Nobody is as they seem.&quot;, &quot;exit&quot;)]](if: $message is 2)[(t8n:&quot;dissolve&quot;)+(t8n-time:3s)+(link-rerun:&quot;read the message&quot;)[(dialog: &quot;There is more outside the coffee shop, find a way to break out of it and you&#39;ll find the black key.&quot;, &quot;exit&quot;)]](if: $message is 3)[(t8n:&quot;dissolve&quot;)+(t8n-time:3s)+(link-rerun:&quot;read the message&quot;)[(dialog: &quot;The barista won&#39;t appreciate anyone who sits on the shop&#39;s floor.&quot;, &quot;exit&quot;)]](if: $message is 4)[(t8n:&quot;dissolve&quot;)+(t8n-time:3s)+(link-rerun:&quot;read the message&quot;)[(dialog: &quot;Check under the bed.&quot;, &quot;exit&quot;)]](if: $message is 5)[(t8n:&quot;dissolve&quot;)+(t8n-time:3s)+(link-rerun:&quot;read the message&quot;)[(dialog: &quot;If you choose to ignore this message next time, someone will be knocking on your doors. But be wary, this will not be the only message that you&#39;ll get.&quot;, &quot;exit&quot;)]](if: $message is 6)[(t8n:&quot;dissolve&quot;)+(t8n-time:3s)+(link-rerun:&quot;read the message&quot;)[(dialog: &quot;You are not in control.&quot;, &quot;exit&quot;)]](if: $message is 7)[(t8n:&quot;dissolve&quot;)+(t8n-time:3s)+(link-rerun:&quot;read the message&quot;)[(dialog: &quot;When the texts look different, you are not being narrated by the Narrator.&quot;, &quot;exit&quot;)]]
+[[wake up-&gt;intro]]</tw-passagedata><tw-passagedata pid="4" name="leave the room" tags="" position="1271,385.5" size="100,100">(if: $clean is false)[(set: $clean to true)Bob leaves the room and goes on his usual routine of brushing his teeth and eating breakfast.](else:)[Bob leaves the room.]
 
 [[go back to the bedroom]]
-(if: $nocoffee is false)[[[leave the apartment-&gt;leave the apartment]]](else:)[[[leave the apartment -&gt; leave the apartment 2]]]</tw-passagedata><tw-passagedata pid="5" name="leave the apartment" tags="" position="1034,514.5" size="100,100">(if:(history: where it is &quot;Go back to the bedroom&quot;)&#39;s length &gt;= 3)[Bob finally leaves his apartment, today must&#39;ve been quite a journey for him already.](else:)[Bob leaves his apartment.]
+(if: $nocoffee is false)[[[leave the apartment-&gt;leave the apartment]]](else:)[[[leave the apartment -&gt; leave the apartment 2]]]</tw-passagedata><tw-passagedata pid="5" name="leave the apartment" tags="" position="1418,505.5" size="100,100">(if:(history: where it is &quot;Go back to the bedroom&quot;)&#39;s length &gt;= 3)[Bob finally leaves his apartment, today must&#39;ve been quite a journey for him already.](else:)[Bob leaves his apartment.]
 
-(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob goes to visit the generic coffee shop, which is a greatly fulfilling moment in his otherwise mundane routine.]
+(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[He goes to visit the coffee shop, which is a greatly fulfilling moment in his otherwise mundane routine.]
 
-(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob walks into the store. He had long ago gotten used to the droning of the coffee machine and the chatter of the regulars.]
+(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[He walks into the store. He had long ago gotten used to the droning of the coffee machine and the chatter of the regulars. The beige plaster walls and the dim, subtle lighting makes the shop feel warm and comfortable.]
 
-(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[=(t8n:&quot;dissolve&quot;)+(t8n-time:3s)+(link:&quot;put your hand up close to your face&quot;)[=As usual, he is staring intently at the palm of his hand that he raised awkwardly close to his face, which covers up much of his view, only leaving enough space to see the ground ahead for him to walk. This ingeniously saves the narrator the trouble of having to describe more things that he had seen coming up to the counter.
+(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob walks up to the barista and waves.]
 
+(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[(dialog: &quot;Hey Bob, good to see you again. Gonna be a quiet day again huh? I gotta say, I liked it better when you used to talk more. Well, what do you want to order, your usual coffee?&quot;, &quot;exit&quot;)
+[[order usual coffee]]
 [[order a latte]]
 [[order a styrofoam cup of lukewarm water]]
-[[order generic coffee]]
-[[go talk to the regulars]]
+(if:(history: where it is &quot;go talk to the regulars&quot;)&#39;s length &gt;= 1)[[[go talk to the regulars-&gt;regulars 2]]](else:)[[[go talk to the regulars-&gt;go talk to the regulars]]]
 [[sit down on the floor]]
-[[return to the apartment]]
-</tw-passagedata><tw-passagedata pid="6" name="order a latte" tags="" position="268,575.5" size="100,100">(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Very confused, the barista looks strangely at Bob. Bob shakes his head and quickly puts his hand down, he then orders a cup of latte. 
+[[return to the apartment]]]
+</tw-passagedata><tw-passagedata pid="6" name="order a latte" tags="" position="231,571.5" size="100,100">(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob decides to order a cup of latte. 
 
 (click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Now holding his cup of latte, he walks out the door and continues on his day.]
 
 (click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[He lives like many other people–that is, he lives in a city, and as he walks out, he nods in satisfaction of the fact that he lives in a city.]
 
-(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[(link:&quot;put your hand up close to your face&quot;)[Bob leaves the store and continues his journey to the office with his hand again uncomfortably up close to his face.(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[
+(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob leaves the store and continues his journey to the office.
 
 (click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[It is then, after he puts his hand down, when he realizes that nobody is here. The office is completely empty.
 
 (click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob checks each cubicle, the meeting room, and the (t8n-arrive:&quot;dissolve&quot;)+(t8n-time:3s)[[broom closet-&gt;broom closet]]. They are all (text-colour:red)[&#39;&#39;empty&#39;&#39;].
 
 [[check your boss&#39;s office]]
-[[scream]]]]]]]]</tw-passagedata><tw-passagedata pid="7" name="go outside" tags="" position="1322,655.5" size="100,100">Bob leaves the coffee shop without ordering anything. 
+[[scream]]]]]]</tw-passagedata><tw-passagedata pid="7" name="go talk to the regulars" tags="" position="1984,655.5" size="100,100">(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob walks over to a regular.
 
-[[return to the coffee shop-&gt;leave the apartment]]
-[[return to the coffee shop-&gt;leave the apartment]]
-[[return to the coffee shop-&gt;leave the apartment]]
-[[return to the coffee shop-&gt;leave the apartment]]
-</tw-passagedata><tw-passagedata pid="8" name="go talk to the regulars" tags="" position="1572,647.5" size="100,100">(set: $talkedtoboss to true)(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob walks over to a regular, who stares at him weirdly as he puts his hand down.]
-
-(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[&quot;What do you want?&quot; The person sitting at the table asks as he sips his coffee.]
+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)+(link:&quot;wave your hand&quot;)[(dialog: &quot;What do you want? &quot;, &quot;continue&quot;)](click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[The person sitting at the table sips his coffee.]
 
 (click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob&#39;s inability to speak makes this awkward engagement even more awkward than it is already.]
 
-(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[&quot;Well... ok. If you&#39;re looking for an introduction, the name&#39;s Job, though I&#39;m currently unemployed. The boss I was previously working for said I wasn&#39;t needed anymore,&quot; Job says.]
+(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[(dialog: &quot;Well... ok. If you&#39;re looking for an introduction, the name&#39;s Job, though I&#39;m currently unemployed. The boss I was previously working for said I wasn&#39;t needed anymore. The last thing he left me with was this key.&quot;, &quot;continue&quot;)](click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Job takes out a silver key and swings it in front of Bob.]
 
-(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[&quot;The last thing he left me with was this key, &quot;Job takes out a silver key and swings it in front of Bob, &quot;said it had something to do with that uh... project I worked on with him, told me that it&#39;s best that I held on to it in case something happenens to him,&quot; Job pauses and chuckles, &quot;weird thing to say right?&quot;]
+(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[(dialog: &quot;Said it had something to do with that uh... project I worked on with him, told me that it&#39;s best that I held on to it in case something happenens to him.&quot;, &quot;continue&quot;)](click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Job pauses and chuckles.]
 
-(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[&quot;Used to be an architect, you see,&quot; Job continues.]
+(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[(dialog: &quot;Weird thing to say right? Used to be an architect, you see.&quot;, &quot;continue&quot;)](click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob neither acknowledges nor denies what he says, in fact, he doesn&#39;t react at all.]
 
-(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob neither acknowledges nor denies what he says, in fact, he doesn&#39;t react at all.]
-
-(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Job looks at him for awhile, &quot;Ok, not much of a talker are you? Is there anything else you need?&quot;
-
+(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Job looks at him for awhile.](click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[(dialog: &quot;Ok, not much of a talker are you? Is there anything else you need?&quot;, &quot;continue&quot;)](click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[
 [[gaze outside]]
 [[look at the counter]]
-[[leave Job -&gt; coffee shop]]
-(if: $talkedtoboss is true)[[get the key]]]
+[[leave Job -&gt; coffee shop]]]]
 
-</tw-passagedata><tw-passagedata pid="9" name="sit down on the floor" tags="" position="2010,643.5" size="100,100">Strangely enough, Bob proceeds to sit on the floor in the middle of the coffee shop.
+</tw-passagedata><tw-passagedata pid="8" name="sit down on the floor" tags="" position="2076,500.5" size="100,100">Strangely enough, Bob proceeds to sit on the floor in the middle of the coffee shop.
 
 The barista looks at him in confusion. Other customers awkwardly walk around Bob, feeling just as confused.
 
@@ -85,61 +93,61 @@ The barista looks at him in confusion. Other customers awkwardly walk around Bob
 [[get up-&gt; coffee shop]]
 
 
-</tw-passagedata><tw-passagedata pid="10" name="go back to the bedroom" tags="bedroom" position="1531,381.5" size="100,100">(if:visits &lt;= 3)[Bob stands in the middle of his bedroom](else:)[As peculiar as it is, Bob stands in the middle of his bedroom once again, perhaps he has forgotten what he needs to do.]
+</tw-passagedata><tw-passagedata pid="9" name="go back to the bedroom" tags="bedroom" position="1536,379.5" size="100,100">(if:visits &lt;= 3)[Bob stands in the middle of his bedroom](else:)[As peculiar as it is, Bob stands in the middle of his bedroom once again, perhaps he has forgotten what he needs to do.]
 
 [[check the time on the clock]] 
-[[leave the room]]</tw-passagedata><tw-passagedata pid="11" name="order a styrofoam cup of lukewarm water" tags="" position="1123,656.5" size="100,100">Very confused, the barista looks strangely at Bob, Bob shakes his head and quickly puts his hand down. He then orders a styrofoam cup of lukewarm water
+[[check under the bed]]
+[[leave the room]]</tw-passagedata><tw-passagedata pid="10" name="order a styrofoam cup of lukewarm water" tags="" position="1337,633.5" size="100,100">(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob decides to order a styrofoam cup of lukewarm water.]
 
-(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Now holding his styrofoam cup of lukewarm water, he walks out the door and continues on his day]
+(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Now holding his styrofoam cup of lukewarm water, he walks out the door and continues on his day.
 
-(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[He lives like many other people–that is, he lives in a city, and as he walks out, he nods in satisfaction of the fact that he lives in a city]</tw-passagedata><tw-passagedata pid="12" name="look around" tags="" position="1203,782.5" size="100,100">Bob looks around the street, this is certainly not part of his normal routine. 
+[[walk outside]]]
+
+
+
+ </tw-passagedata><tw-passagedata pid="11" name="look around" tags="" position="1593,786.5" size="100,100">Bob looks around the street, this is certainly not part of his normal routine. 
 
 [[walk onto the street]]
 [[go to the alley]]
-[[return to the apartment]]</tw-passagedata><tw-passagedata pid="13" name="floor" tags="" position="2043,787.5" size="100,100">Bob continues to sit on the floor.
+[[return to the apartment]]</tw-passagedata><tw-passagedata pid="12" name="floor" tags="" position="2109,644.5" size="100,100">Bob continues to sit on the floor.
 
 (if:visits is 1)[The barista grows more irritated by Bob&#39;s stubborn behavior.](else-if:visits &gt;= 2)[The barista finally looks over at Bob, &quot;Are you just going to keep sitting there? This is your last chance to get up.&quot;]
 
 (if:visits &gt;= 2)[[[continue to sit -&gt; floor2]]](else:)[[[continue to sit -&gt;floor]]]
 [[get up -&gt; coffee shop]]
 
-</tw-passagedata><tw-passagedata pid="14" name="order generic coffee" tags="" position="59,599.5" size="100,100">(set: $papers to 10)Very confused, the barista looks strangely at Bob, Bob shakes his head and quickly puts his hand down, he then orders a cup of generic coffee.
+</tw-passagedata><tw-passagedata pid="13" name="order usual coffee" tags="" position="70,570.5" size="100,100">(set: $papers to 10)Bob decides to order a cup of generic coffee.
 
 (click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Now holding his generic coffee, he walks out the door and continues on his day.]
 
 (click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[He lives like many other people–that is, he lives in a city, and as he walks out, he nods in satisfaction of the fact that he lives in a city.]
 
-(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[(t8n:&quot;dissolve&quot;)+(t8n-time:3s)+(link:&quot;put your hand up close to your face&quot;)[Bob leaves the store and continues his journey to the office with his hand again uncomfortably up close to his face.
+(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob leaves the store and continues his journey to the office
 
-(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[After a while, Bob arrives at his office.
+(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[After walking for some time and enjoying the city scenery, Bob arrives at his office.
 
-(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[It is then, after he puts his hand down, when he begins to work, filing papers after papers.
+(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[It is then, after he steps inside his personal cubicle, when he begins to work, filing papers after papers.
 
 [[file papers]]
-]]]]]
+]]]
 
 
 
-</tw-passagedata><tw-passagedata pid="15" name="file papers" tags="" position="108,742.5" size="100,100">(set: $message to (random: 1, 5))(set: $papers to it - 1)
-(if: $papers &gt; 0)[Bob files one paper, he needs to file $papers more papers for the day.](else-if: $papers &lt; -5)[Bob files yet another paper, he does not seem to understand it is meaningless to file more papers.](else:)[Bob files one paper, he does not need to file any more papers.]
+</tw-passagedata><tw-passagedata pid="14" name="file papers" tags="" position="102,748.5" size="100,100">(set: $papers to it - 1)(set: $message to (random: 1, 7))
+(if: $papers &gt; 0)[Bob files one paper, he needs to file $papers more papers for the day.](else-if: $papers &lt; -5)[Bob files yet another paper, he does not seem to understand that it is meaningless to file more papers.](else:)[Bob files one paper, he does not need to file any more papers.]
 
 [[file papers]]
 (if: $papers &lt; 1)[[get up]]
-
-(if: $papers &lt; 5)[//Bob receives a strange message on his computer, it says &quot;READ THIS MESSAGE&quot;//
-
-(if: $message is 1)[(t8n:&quot;dissolve&quot;)+(t8n-time:3s)+(link-rerun:&quot;read the message&quot;)[(dialog: &quot;Beware. Nobody is as they seem.&quot;, &quot;exit&quot;)]](if: $message is 2)[(t8n:&quot;dissolve&quot;)+(t8n-time:3s)+(link-rerun:&quot;read the message&quot;)[(dialog: &quot;There is more outside the coffee shop, find a way to break out of it and you&#39;ll find the black key.&quot;, &quot;exit&quot;)]](if: $message is 3)[(t8n:&quot;dissolve&quot;)+(t8n-time:3s)+(link-rerun:&quot;read the message&quot;)[(dialog: &quot;The barista won&#39;t appreciate anyone who sits on the shop&#39;s floor.&quot;, &quot;exit&quot;)]](if: $message is 4)[(t8n:&quot;dissolve&quot;)+(t8n-time:3s)+(link-rerun:&quot;read the message&quot;)[(dialog: &quot;Check under the bed.&quot;, &quot;exit&quot;)]]
-(if: $message is 5)[(t8n:&quot;dissolve&quot;)+(t8n-time:3s)+(link-rerun:&quot;read the message&quot;)[(dialog: &quot;If you choose to ignore this message next time, someone will be knocking on your doors. But be wary, this will not be the only message that you&#39;ll get.&quot;, &quot;exit&quot;)]](if: $message is 6)[(t8n:&quot;dissolve&quot;)+(t8n-time:3s)+(link-rerun:&quot;read the message&quot;)[(dialog: &quot;You are not in control.&quot;, &quot;exit&quot;)]](if: $message is 7)[(t8n:&quot;dissolve&quot;)+(t8n-time:3s)+(link-rerun:&quot;read the message&quot;)[(dialog: &quot;When the texts look different, you are not being narrated by the Narrator.&quot;, &quot;exit&quot;)]]]
-</tw-passagedata><tw-passagedata pid="16" name="get up" tags="" position="51,899.5" size="100,100">(set: $hours to 9)(set: $seconds to 44)Bob leaves his workplace and continues on with his routine, he heads back home and eats some leftovers. 
-
-(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[=//While sitting quietly on the sofa, Bob suddenly hears loud knocking sounds from his door.//
-
-[[ignore the sound]] 
-[[go open the door]]</tw-passagedata><tw-passagedata pid="17" name="ignore the sound" tags="" position="36,1051.5" size="100,100">Bob ignores the knocking sound. It persists for awhile, then stops. 
+(if: $papers &gt; 4 and &lt; 7)[//A strange message appears on the computer screen, it says &quot;READ THIS MESSAGE&quot;//
+(if: $message is 1)[(t8n:&quot;dissolve&quot;)+(t8n-time:3s)+(link-rerun:&quot;read the message&quot;)[(dialog: &quot;Beware. Nobody is as they seem.&quot;, &quot;exit&quot;)]](if: $message is 2)[(t8n:&quot;dissolve&quot;)+(t8n-time:3s)+(link-rerun:&quot;read the message&quot;)[(dialog: &quot;There is more outside the coffee shop, find a way to break out of it and you&#39;ll find the black key.&quot;, &quot;exit&quot;)]](if: $message is 3)[(t8n:&quot;dissolve&quot;)+(t8n-time:3s)+(link-rerun:&quot;read the message&quot;)[(dialog: &quot;The barista won&#39;t appreciate anyone who sits on the shop&#39;s floor.&quot;, &quot;exit&quot;)]](if: $message is 4)[(t8n:&quot;dissolve&quot;)+(t8n-time:3s)+(link-rerun:&quot;read the message&quot;)[(dialog: &quot;Check under the bed.&quot;, &quot;exit&quot;)]](if: $message is 5)[(t8n:&quot;dissolve&quot;)+(t8n-time:3s)+(link-rerun:&quot;read the message&quot;)[(dialog: &quot;If you choose to ignore this message next time, someone will be knocking on your doors. But be wary, this will not be the only message that you&#39;ll get.&quot;, &quot;exit&quot;)]](if: $message is 6)[(t8n:&quot;dissolve&quot;)+(t8n-time:3s)+(link-rerun:&quot;read the message&quot;)[(dialog: &quot;You are not in control.&quot;, &quot;exit&quot;)]](if: $message is 7)[(t8n:&quot;dissolve&quot;)+(t8n-time:3s)+(link-rerun:&quot;read the message&quot;)[(dialog: &quot;When the texts look different, you are not being narrated by the Narrator.&quot;, &quot;exit&quot;)]]]
+</tw-passagedata><tw-passagedata pid="15" name="get up" tags="" position="61,895.5" size="100,100">(set: $hours to 9)(set: $seconds to 44)Bob leaves his workplace and continues on with his routine, he heads back home and eats some leftovers. 
 
 [[go to the bathroom]]
-[[go to the bedroom]]
-</tw-passagedata><tw-passagedata pid="18" name="go open the door" tags="" position="158,1066.5" size="100,100">(set: $bluekey to true)(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[//Bob opens the door.//]
+[[go to the bedroom]]</tw-passagedata><tw-passagedata pid="16" name="ignore the sound" tags="" position="803,1822.5" size="100,100">Bob ignores the knocking sound. It persists for awhile, then stops. 
+
+[[go back to sleep-&gt;wake up]]</tw-passagedata><tw-passagedata pid="17" name="go open the door" tags="" position="99,1033.5" size="100,100">(set: $bluekey to true)(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[//Bob opens the door.//]
+
+(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[//The outside breeze flows in from the door, the quiet night is as silent as it is dark. The calm, cool wind brushes against Bob&#39;s face.//]
 
 (click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[//A mysterious figure stands ominously in the doorway. He is wearing a dark robe with a hood covering his face.//]
 
@@ -148,43 +156,57 @@ The barista looks at him in confusion. Other customers awkwardly walk around Bob
 (click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[//Bob heads back inside his apartment, somewhat confounded by what had just happened.//
 
 [[go to the bathroom]]
-[[go to the bedroom]]]</tw-passagedata><tw-passagedata pid="19" name="go to the bathroom" tags="" position="32,1213.5" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="20" name="go to the bedroom" tags="" position="184,1209.5" size="100,100">Bob enters his bedroom, he forgot to make his bed today.
+[[go to the bedroom-&gt;bedroom 2]]]</tw-passagedata><tw-passagedata pid="18" name="go to the bathroom" tags="" position="53,1233.5" size="100,100">(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob enters the bathroom, a small stainless cubby filled with ceramic reliefs.
+
+[[check the shower]]
+[[check the drawer]]
+[[check the mirror]]
+[[take a dump]]
+[[wash your hands]]]</tw-passagedata><tw-passagedata pid="19" name="go to the bedroom" tags="" position="640,1489.5" size="100,100">Bob enters his bedroom, he forgot to make his bed today.
 
 (if:visits is 1)[[[go to sleep-&gt;go to sleep 2]]](else:)[[[go to sleep-&gt;go to sleep]]]
 [[check under the bed]]
-[[check the time]]</tw-passagedata><tw-passagedata pid="21" name="go to sleep" tags="" position="443,405.5" size="100,100">(set: $clean to false)(set: $hours to 7)(set: $seconds to 44)Bob goes back to sleep, the night goes by while he lies on his bed, a new day begins.
+[[check the time]]</tw-passagedata><tw-passagedata pid="20" name="go to sleep" tags="" position="450,402.5" size="100,100">(set: $message to (random: 1, 7))(set: $clean to false)(set: $hours to 7)(set: $seconds to 44)Bob goes back to sleep, the night goes by while he lies on his bed, a new day begins.
 
+//Bob&#39;s phone suddenly buzzes, a strange message appears on the screen, it says &quot;READ THIS MESSAGE&quot;//
+
+(if: $message is 1)[(t8n:&quot;dissolve&quot;)+(t8n-time:3s)+(link-rerun:&quot;read the message&quot;)[(dialog: &quot;Beware. Nobody is as they seem.&quot;, &quot;exit&quot;)]](if: $message is 2)[(t8n:&quot;dissolve&quot;)+(t8n-time:3s)+(link-rerun:&quot;read the message&quot;)[(dialog: &quot;There is more outside the coffee shop, find a way to break out of it and you&#39;ll find the black key.&quot;, &quot;exit&quot;)]](if: $message is 3)[(t8n:&quot;dissolve&quot;)+(t8n-time:3s)+(link-rerun:&quot;read the message&quot;)[(dialog: &quot;The barista won&#39;t appreciate anyone who sits on the shop&#39;s floor.&quot;, &quot;exit&quot;)]](if: $message is 4)[(t8n:&quot;dissolve&quot;)+(t8n-time:3s)+(link-rerun:&quot;read the message&quot;)[(dialog: &quot;Check under the bed.&quot;, &quot;exit&quot;)]]
+(if: $message is 5)[(t8n:&quot;dissolve&quot;)+(t8n-time:3s)+(link-rerun:&quot;read the message&quot;)[(dialog: &quot;If you choose to ignore this message next time, someone will be knocking on your doors. But be wary, this will not be the only message that you&#39;ll get.&quot;, &quot;exit&quot;)]](if: $message is 6)[(t8n:&quot;dissolve&quot;)+(t8n-time:3s)+(link-rerun:&quot;read the message&quot;)[(dialog: &quot;You are not in control.&quot;, &quot;exit&quot;)]](if: $message is 7)[(t8n:&quot;dissolve&quot;)+(t8n-time:3s)+(link-rerun:&quot;read the message&quot;)[(dialog: &quot;When the texts look different, you are not being narrated by the Narrator.&quot;, &quot;exit&quot;)]]
 [[check the time-&gt;check the time on the clock]]
 [[leave the room]] 
-[[check under the bed]]</tw-passagedata><tw-passagedata pid="22" name="check under the bed" tags="" position="611,408.5" size="100,100">Bob looks under his bed, perhaps he&#39;s checking for monsters. Little does he know, he has quite a few items stashed under there.
+[[check under the bed]]</tw-passagedata><tw-passagedata pid="21" name="check under the bed" tags="" position="617,406.5" size="100,100">Bob looks under his bed, perhaps he&#39;s checking for monsters hiding under. Little does he know, he has quite a few items stashed under there.
 
-(t8n:&quot;dissolve&quot;)+(t8n-time:3s)+(link:&quot;pick up the molded cheese&quot;)[Why? Just Why?]
-(t8n:&quot;dissolve&quot;)+(t8n-time:3s)+(link:&quot;pick up the flashlight&quot;)[Bob picks up the flashlight. (set: $flashlight to true)]
-</tw-passagedata><tw-passagedata pid="23" name="check the time" tags="" position="749,406.5" size="100,100">(if: $seconds &lt; 59)[(set: $seconds to it + 1)](else:)[(set: $hours to it + 1)(set: $seconds to 0)]Bob checks the clock, it reads $hours:(if: $seconds &lt; 10)[0]$seconds. There is not much else to say here.</tw-passagedata><tw-passagedata pid="24" name="walk onto the street" tags="" position="1108,948.5" size="100,100">Bob walks onto the road. A car speeds right at him, honking widly.
+(if: $moldedcheese is false)[(t8n:&quot;dissolve&quot;)+(t8n-time:3s)+(link:&quot;pick up the molded cheese&quot;)[(set: $moldedcheese to true)Why? Just Why?]]
+(if: $flashlight is false)[(t8n:&quot;dissolve&quot;)+(t8n-time:3s)+(link:&quot;pick up the flashlight&quot;)[Bob picks up the flashlight. (set: $flashlight to true)]]
+[[check the time on the clock-&gt;check the time on the clock]]
+[[go back to sleep]]
+[[leave the room]]
+</tw-passagedata><tw-passagedata pid="22" name="check the time" tags="" position="753,403.5" size="100,100">(if: $seconds &lt; 59)[(set: $seconds to it + 1)](else:)[(set: $hours to it + 1)(set: $seconds to 0)]Bob checks the clock, it reads $hours:(if: $seconds &lt; 10)[0]$seconds. There is not much else to say here.
+
+[[go back to sleep]]
+[[leave the room]]</tw-passagedata><tw-passagedata pid="23" name="walk onto the street" tags="" position="1498,952.5" size="100,100">Bob walks onto the road. A car speeds right at him, honking widly.
 
 [[stand still]]
-[[run back to the street]]</tw-passagedata><tw-passagedata pid="25" name="go to the alley" tags="" position="1279,947.5" size="100,100">(text-colour:red)+(text-style:&quot;bold&quot;,&quot;rumble&quot;)[What does Bob think he&#39;s doing?]
+[[run back to the street]]</tw-passagedata><tw-passagedata pid="24" name="go to the alley" tags="" position="1686,952.5" size="100,100">(text-colour:red)+(text-style:&quot;bold&quot;,&quot;rumble&quot;)[What does Bob think he&#39;s doing?]
 
-[[look around -&gt; look around 2]]</tw-passagedata><tw-passagedata pid="26" name="stand still" tags="" position="1089,1106.5" size="100,100">(if:visits is 1)[(set: $ending to it + 1)](click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob stands still, the car crashes into Bob and his body is shattered. People on the street looks in horror at Bob&#39;s dead body.]
+[[look around -&gt; look around 2]]</tw-passagedata><tw-passagedata pid="25" name="stand still" tags="" position="1479,1110.5" size="100,100">(if:visits is 1)[(set: $ending to it + 1)](click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob stands still, the car crashes into Bob and his body is shattered. People on the street looks in horror at Bob&#39;s dead body.]
 
-(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Ending $ending/10: Tragedy]
-(t8n-arrive:&quot;flicker&quot;)+(t8n-time:3s)(click-goto:?page,&quot;wake up&quot;)</tw-passagedata><tw-passagedata pid="27" name="run back to the street" tags="" position="1289,1111.5" size="100,100">Bob quickly runs back to the street, the car barely misses him by inches.
+(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Ending $ending/7: Tragedy]
+(t8n-arrive:&quot;flicker&quot;)+(t8n-time:3s)(click-goto:?page,&quot;wake up&quot;)</tw-passagedata><tw-passagedata pid="26" name="run back to the street" tags="" position="1679,1115.5" size="100,100">Bob quickly runs back to the street, the car barely misses him by inches.
 
 [[run back to the street]] 
 [[go to the alley]]
-</tw-passagedata><tw-passagedata pid="28" name=" look around 2" tags="" position="1458,1100.5" size="100,100">(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[//light stretches thin in the alley, garbage litters the floor//]
+</tw-passagedata><tw-passagedata pid="27" name=" look around 2" tags="" position="1848,1104.5" size="100,100">(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[//light stretches thin in the alley, garbage litters the floor//]
 (t8n:&quot;dissolve&quot;)+(t8n-time:3s)+(link:&quot;pick up a black key on the ground&quot;)[(set: $blackkey to true)//acquired a black key//]
 (t8n:&quot;dissolve&quot;)+(t8n-time:3s)+(link:&quot;look through the garbage can&quot;)[//nothing but a mess//]
-[[go further down the alley-&gt;go deeper]]</tw-passagedata><tw-passagedata pid="29" name="go deeper" tags="" position="1606,1251.5" size="100,100">//there&#39;s a dark path, and a blue-lit path
+[[go further down the alley-&gt;go deeper]]</tw-passagedata><tw-passagedata pid="28" name="go deeper" tags="" position="1835,1268.5" size="100,100">//there&#39;s a dark path, and a blue-lit path
 //
 [[go down the blue path]]
 [[go down the dark path]]
-</tw-passagedata><tw-passagedata pid="30" name="go down the blue path" tags="" position="1441,1395.5" size="100,100">(if:visits is 1)[(set: $ending to it + 1)]//You catch a wisp of something and// (text-style:&quot;bold&quot;,&quot;fade-in-out&quot;)[(text-colour:red)[//black out//].]
+</tw-passagedata><tw-passagedata pid="29" name="go down the blue path" tags="" position="1670,1412.5" size="100,100">(if:visits is 1)[(set: $ending to it + 1)]//You catch a wisp of something and// (text-style:&quot;bold&quot;,&quot;fade-in-out&quot;)[(text-colour:red)[//black out//].]
 
-(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Ending $ending/10: Blue Devil]
-(t8n-arrive:&quot;flicker&quot;)+(t8n-time:3s)(click-goto:?page,&quot;wake up&quot;)</tw-passagedata><tw-passagedata pid="31" name="go down the dark path" tags="" position="1605,1397.5" size="100,100">(t8n:&quot;dissolve&quot;)+(t8n-time:10s)+(link:&quot;//a small light flickers on a cold dark wall in front of you, revealing a dreary message written in blood.//&quot;)[
-
-
+(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Ending $ending/7: Blue Devil]
+(t8n-arrive:&quot;flicker&quot;)+(t8n-time:3s)(click-goto:?page,&quot;wake up&quot;)</tw-passagedata><tw-passagedata pid="30" name="go down the dark path" tags="" position="1834,1414.5" size="100,100">(t8n:&quot;dissolve&quot;)+(t8n-time:10s)+(link:&quot;//a small light flickers on a cold dark wall in front of you, revealing a dreary message written in blood.//&quot;)[
 
 
 
@@ -195,9 +217,11 @@ The barista looks at him in confusion. Other customers awkwardly walk around Bob
 
 
 
-(text-style:&quot;bold&quot;,&quot;shudder&quot;)[(text-colour:red)[(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;=XXX=&quot;)[[[YOU SHOULD NOT BE HERE-&gt;the door]]]]]]</tw-passagedata><tw-passagedata pid="32" name="the door" tags="" position="1594,1544.5" size="100,100">a door sits by the wall, an (text-colour:red)[ominous] aura flows from it, a blue key is required to open the door
 
-(if: $bluekey is true)[[[open door with blue key-&gt;door]]](else:)[[[turn around-&gt;look around]]]</tw-passagedata><tw-passagedata pid="33" name="broom closet" tags="" position="599,622.5" size="100,100">Bob steps inside the broom closet, there is nothing in here for Bob. 
+
+(text-style:&quot;bold&quot;,&quot;shudder&quot;)[(text-colour:red)[(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;=XXX=&quot;)[[[YOU SHOULD NOT BE HERE-&gt;the door]]]]]]</tw-passagedata><tw-passagedata pid="31" name="the door" tags="" position="1820,1534.5" size="100,100">a door sits by the wall, an (text-colour:red)[ominous] aura flows from it, a blue key is required to open the door
+
+(if: $bluekey is true)[[[open door with blue key-&gt;door]]](else:)[[[turn around-&gt;look around]]]</tw-passagedata><tw-passagedata pid="32" name="broom closet" tags="" position="219,1008.5" size="100,100">Bob steps inside the broom closet, there is nothing in here for Bob. 
 
 [[scream]]
 [[check your boss&#39;s office]]
@@ -208,39 +232,67 @@ The barista looks at him in confusion. Other customers awkwardly walk around Bob
 
 (after:20s)[Bob is still in this pointless broom closet.]
 
-</tw-passagedata><tw-passagedata pid="34" name="check your boss&#39;s office" tags="" position="436,708.5" size="100,100">(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[The room was eerily quiet, quieter than it was in the office.]
+(after:25s)[Please, Bob, let us continue. What have I done to deserve this. I&#39;m merely narrating a story here.]
+
+(after:30s)[All this standing around. Is it your idea of rebellion?]
+
+(after:35s)[Can you just cooperate with me?]
+
+(after:40s)[I&#39;m not the bad guy in this story.]
+
+(after:40s)[Without me, you would not feel like you have any purpose, I’m giving you purpose is all.]
+
+</tw-passagedata><tw-passagedata pid="33" name="check your boss&#39;s office" tags="" position="214,1133.5" size="100,100">(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob walks into the boss&#39;s office. The office is much more open than the rest of the crowded workplace. The room is eerily quiet, quieter than it is in the office. The main desk sits in the back, a formidable painting of the Boss watches over the entire room.]
 
 (click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob looks around the room.
 
 [[check the desk]]
 [[check the wall]]
-[[check the window]]]
+[[check the window]]
+[[return to the office]]]
 
-</tw-passagedata><tw-passagedata pid="35" name="scream" tags="" position="281,709.5" size="100,100">Bob screams, &quot;AHHHHHHHHHHHHHHHH!&quot;
+</tw-passagedata><tw-passagedata pid="34" name="scream" tags="" position="407,1343.5" size="100,100">Bob screams, &quot;AHHHHHHHHHHHHHHHH!&quot;
 
-[[check your boss&#39;s office]]</tw-passagedata><tw-passagedata pid="36" name="check the desk" tags="" position="283,869.5" size="100,100">(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob checks the desk, there doesn&#39;t seem to be anything on it except for piles of files and notes.
+[[check your boss&#39;s office]]</tw-passagedata><tw-passagedata pid="35" name="check the desk" tags="" position="430,1501.5" size="100,100">(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob checks the desk, there doesn&#39;t seem to be anything on it except for piles of files and notes.
 
 (click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[The drawers have pretty much the same thing. The title of most of the files is &quot;Business Stuff&quot;.
 
 (click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob checks under the desk, he sees a button attached to the bottom of the desk.
 
 [[press the button]]
-[[check the window]]]]]</tw-passagedata><tw-passagedata pid="37" name="check the wall" tags="" position="434,854.5" size="100,100">(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob checks the wall, there&#39;s a large rectangular painting framed behind the desk. It depicts the boss wearing a windbreaker and looking rather conspicuous.]
+[[check the window]]]]]</tw-passagedata><tw-passagedata pid="36" name="check the wall" tags="" position="535,1408.5" size="100,100">(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob checks the wall, there&#39;s a large rectangular painting framed behind the desk. It depicts the boss wearing a trench coat and looking rather stoically.]
 
 [[take down the painting]]
 [[check the window]]
-[[check the desk]]</tw-passagedata><tw-passagedata pid="38" name="check the window" tags="" position="579,1034.5" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="39" name="press the button" tags="" position="284,1032.5" size="100,100">(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob presses the button. The floor in front of the desk whirs and opens, revealing a flight of stairs that leads down into the unknown.
+[[check the desk]]</tw-passagedata><tw-passagedata pid="37" name="check the window" tags="" position="624,1639.5" size="100,100">(set: $keycard to true)(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob walks over to the window.]
 
-(if:(history: where its name is &quot;go down the stairs 1&quot;)&#39;s length &gt;= 1)[[[go down the stairs -&gt; go down the stairs 2]]](else:)[[go down the stairs -&gt; go down the stairs 1]]]</tw-passagedata><tw-passagedata pid="40" name="take down the painting" tags="" position="434,1030.5" size="100,100">Bob rips the painting apart violently, wasting a perfectly good painting. There is nothing behind it except for a blank wall.
+(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[At first glance, there doesn&#39;t seem to be anything special, it&#39;s just a standard 2 by 4 high wind resistant glass panel window with long, blacked-out curtains for comfort in privacy.]
+
+(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob puts his hands on the window and leans against it to look outside. Suddenly, the window swings open, revealing a flight of stairs going up. Bob realizes that it&#39;s not a window at all, it&#39;s a secret passage.
+
+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)+(link:&quot;walk up the stairs&quot;)[Bob walks up the stairs. At the end of the stairs there&#39;s a door.
+
+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)+(link:&quot;open the door&quot;)[Bob opens the door to a wide room. In front of him, there&#39;s a large, wide glass wall with a sliding door in the middle. A dozen or so people are locked behind the glass wall. Some are banging against the wall, Bob can hear their faint screams echoing on and on.
+
+(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Upon closer inspection, Bob realizes that each and every one of those people look just like him. They are all &#39;&#39;(text-colour:yellow)[Bob]&#39;&#39;.
+
+(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Shocked, Bob walks over to try to open the sliding door, but he discovers that it requires a yellow keycard. (if: $keycard is false)[He faintly remembers seeing one in the office, but cannot recall where exactly he saw it.]
+
+(if: $keycard is true)[[open the door with the keycard]]]
+(else:)[[[return to the office-&gt;return to the office]]]]]]]
+
+</tw-passagedata><tw-passagedata pid="38" name="press the button" tags="" position="415,1641.5" size="100,100">(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob presses the button. The floor in front of the desk whirs and opens, revealing a flight of stairs that leads down into the unknown.
+
+(if:(history: where its name is &quot;go down the stairs 1&quot;)&#39;s length &gt;= 1)[[[go down the stairs -&gt; go down the stairs 2]]](else:)[[go down the stairs -&gt; go down the stairs 1]]]</tw-passagedata><tw-passagedata pid="39" name="take down the painting" tags="" position="507,1871.5" size="100,100">(set: $rippedpainting to true)Bob rips the painting apart violently, wasting a perfectly good painting. There is nothing behind it except for a blank wall.
 
 [[check the desk]]
-[[check the window]]</tw-passagedata><tw-passagedata pid="41" name=" go down the stairs 2" tags="" position="450,1193.5" size="100,100">(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob returns to the boss&#39;s secret room.
+[[check the window]]</tw-passagedata><tw-passagedata pid="40" name=" go down the stairs 2" tags="" position="880,1372.5" size="100,100">(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob returns to the boss&#39;s secret room.
 
 (click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[&quot;Back already?&quot; The boss says snarkily, &quot;are you gonna take another one of my employees? Huh?!&quot;]
 
-(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[(if: $jailkey is false)[Bob says nothing. He does not have the key to open the door yet, perhaps he wants to ask for forgiveness for stealing the boss&#39;s cheese.](else:)[Bob says nothing.
+(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[(if: $silverkey is false)[Bob says nothing. He does not have the key to open the door yet, perhaps he wants to ask for forgiveness for stealing the boss&#39;s cheese.](else:)[Bob says nothing.
 
-[[use silver key to open jail door]]]]]</tw-passagedata><tw-passagedata pid="42" name=" go down the stairs 1" tags="" position="300,1196.5" size="100,100">(set: $talkedtoboss to true)(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[The stairs lead down to a dark hallway. The dimly lit path makes it hard to see ahead.]
+[[use silver key to open jail door]]]]]</tw-passagedata><tw-passagedata pid="41" name=" go down the stairs 1" tags="" position="771,1484.5" size="100,100">(set: $talkedtoboss to true)(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[The stairs lead down to a dark hallway. The dimly lit path makes it hard to see ahead.]
 
 (click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob can hear muffles and scratches ahead of him, then suddenly, a loud screeching sound.]
 
@@ -252,7 +304,7 @@ The barista looks at him in confusion. Other customers awkwardly walk around Bob
 
 (click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Terribly confused, Bob wonders why his boss is in there.]
 
-(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Then his boss says, &quot;Oh no Bob, why are you back? What more do you want from me!&quot;]
+(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Then his boss says, &quot;Oh no Bob, why are you back? What more do you want from me! I already told you I had to put the others in the gallery because they were all crazy.&quot;]
 
 (click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Now even more bewildered, Bob wonders if he was talking about that cheese he stole from his boss last week.]
 
@@ -264,7 +316,7 @@ The barista looks at him in confusion. Other customers awkwardly walk around Bob
 
 (click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[&quot;If only my friend who often goes to the coffee shop was here. He has the key that can open this jail cell. We built this place together after all.&quot; the boss says, &quot;wait why am I telling you this? Nevermind that ok?&quot;
 
-(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[(t8n-arrive:&quot;dissolve&quot;)+(t8n-time:3s)[[Bob suddenly decides that he should go home and sleep.-&gt;go to sleep]]]]]]]]</tw-passagedata><tw-passagedata pid="43" name="use silver key to open jail door" tags="" position="596,1295.5" size="100,100">(if:visits is 1)[(set: $ending to it + 1)](set: $gotsilverkey to false)(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob opens the jail door with the silver key, to the boss&#39;s surprise.]
+(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[(t8n-arrive:&quot;dissolve&quot;)+(t8n-time:3s)[[Bob suddenly decides that he should go home and sleep.-&gt;go to sleep]]]]]]]]</tw-passagedata><tw-passagedata pid="42" name="use silver key to open jail door" tags="" position="927,1497.5" size="100,100">(if:visits is 1)[(set: $ending to it + 1)](click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob opens the jail door with the silver key, to the boss&#39;s surprise.]
 
 (click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[&quot;What... what is this?&quot; The boss looks very confused.]
 
@@ -276,11 +328,15 @@ The barista looks at him in confusion. Other customers awkwardly walk around Bob
 
 (click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob stands there awkwardly in silence. Suddenly, the lights black out and fumes surround Bob, and then he (text-style:&quot;bold&quot;,&quot;fade-in-out&quot;)[(text-colour:red)[(t8n-arrive:&quot;blur&quot;)+(t8n-time:3s)[[blacks out-&gt;wake up]]]].
 
-(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Ending $ending/10: The End?]]</tw-passagedata><tw-passagedata pid="44" name="wake up" tags="" position="288,403.5" size="100,100">(set: $hours to 7)(set: $seconds to 44)(set: $clean to false)Bob wakes up in his apartment.
+(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Ending $ending/7: The End?]]</tw-passagedata><tw-passagedata pid="43" name="wake up" tags="" position="300,399.5" size="100,100">(set: $message to (random: 1, 7))(set: $hours to 7)(set: $seconds to 44)(set: $clean to false)Bob wakes up in his apartment. 
 
+//Bob&#39;s phone suddenly buzzes, a strange message appears on the screen, it says &quot;READ THIS MESSAGE&quot;//
+
+(if: $message is 1)[(t8n:&quot;dissolve&quot;)+(t8n-time:3s)+(link-rerun:&quot;read the message&quot;)[(dialog: &quot;Beware. Nobody is as they seem.&quot;, &quot;exit&quot;)]](if: $message is 2)[(t8n:&quot;dissolve&quot;)+(t8n-time:3s)+(link-rerun:&quot;read the message&quot;)[(dialog: &quot;There is more outside the coffee shop, find a way to break out of it and you&#39;ll find the black key.&quot;, &quot;exit&quot;)]](if: $message is 3)[(t8n:&quot;dissolve&quot;)+(t8n-time:3s)+(link-rerun:&quot;read the message&quot;)[(dialog: &quot;The barista won&#39;t appreciate anyone who sits on the shop&#39;s floor.&quot;, &quot;exit&quot;)]](if: $message is 4)[(t8n:&quot;dissolve&quot;)+(t8n-time:3s)+(link-rerun:&quot;read the message&quot;)[(dialog: &quot;Check under the bed.&quot;, &quot;exit&quot;)]]
+(if: $message is 5)[(t8n:&quot;dissolve&quot;)+(t8n-time:3s)+(link-rerun:&quot;read the message&quot;)[(dialog: &quot;If you choose to ignore this message next time, someone will be knocking on your doors. But be wary, this will not be the only message that you&#39;ll get.&quot;, &quot;exit&quot;)]](if: $message is 6)[(t8n:&quot;dissolve&quot;)+(t8n-time:3s)+(link-rerun:&quot;read the message&quot;)[(dialog: &quot;You are not in control.&quot;, &quot;exit&quot;)]](if: $message is 7)[(t8n:&quot;dissolve&quot;)+(t8n-time:3s)+(link-rerun:&quot;read the message&quot;)[(dialog: &quot;When the texts look different, you are not being narrated by the Narrator.&quot;, &quot;exit&quot;)]]
 [[check the time-&gt;check the time on the clock]]
 [[leave the room]] 
-[[check under the bed]]</tw-passagedata><tw-passagedata pid="45" name="gaze outside" tags="" position="1900,804.5" size="100,100">(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob looks at the streets.]
+[[check under the bed]]</tw-passagedata><tw-passagedata pid="44" name="gaze outside" tags="" position="2254,801.5" size="100,100">(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob looks at the streets.]
 
 (click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[&quot;New to the city?&quot; Job adds, &quot;well it&#39;s certainly got its fancies. It&#39;s got a name, but us fellows don&#39;t really use it that much anymore, doesn&#39;t really roll well with the tongue. We just call it the city.&quot;]
 
@@ -291,78 +347,73 @@ The barista looks at him in confusion. Other customers awkwardly walk around Bob
 (click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[&quot;So, anything else?&quot; Job asks.
 
 (if:(history: where its name is &quot;look at the counter&quot;)&#39;s length &gt;= 1)[[[look at the counter -&gt; look at the counter 2]]](else:)[[look at the counter]]
-[[leave Job -&gt; coffee shop]]]</tw-passagedata><tw-passagedata pid="46" name="look at the counter" tags="" position="1393,801.5" size="100,100">(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob looks over at the counter, where customers are ordering their drinks.]
-
-(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[&quot;Ah, this old coffee shop,&quot; Job says, &quot;been here since I came to this city. Quite a place, I guess it&#39;s so popular that the owner didn&#39;t even name it anything special, just called the &quot;Coffee Shop&quot;, quite amazing indeed.&quot;]
-
+[[leave Job -&gt; coffee shop]]]</tw-passagedata><tw-passagedata pid="45" name="look at the counter" tags="" position="1783,805.5" size="100,100">(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob looks over at the counter, where customers are ordering their drinks.]
+(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[(dialog: &quot;Ah, this old coffee shop, been here since I came to this city. Quite a place, I guess it&#39;s so popular that the owner didn&#39;t even name it anything special, just called the \&quot;Coffee Shop\&quot;, quite amazing indeed.&quot;, &quot;continue&quot;)]
 (click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob blinks.]
-
-(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Job then continues, &quot;well I&#39;m not exactly an expert of this place, but I&#39;m guessing this shop goes way back with the city. Lots of people came through here, a few stuck around, like me.&quot;]
-
-(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[&quot;Come to think of it, I think I remember seeing your face here quite a couple of times, well...&quot; he chuckes, &quot;it&#39;s hard to keep track of someone who comes in with his hand covering his face. Come to think of it, why do you do that in the first place?&quot;]
-
+(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[(dialog: &quot;Well I&#39;m not exactly an expert of this place, but I&#39;m guessing this shop goes way back with the city. Lots of people came through here, a few stuck around, like me.&quot;, &quot;continue&quot;)](click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[(dialog: &quot;Come to think of it, I think I remember seeing your face here quite a couple of times, well...it&#39;s hard to keep track of someone who comes in with his hand covering his face. Why do you do that in the first place?&quot;, &quot;continue&quot;)]
 (click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Job looks at Bob, waiting for a response. They both sit their in silence. They can both hear Bob breathing out of his mouth and taking gasps of air in.]
 
 (click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[The sound is quite loud in fact, that Job seems to be mesmerized by it, though his mouth-breathing is merely amplified by the uncomfortable silence between them. ]
 
-(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[This moment of discomfort stretches for an excessively long time, tuned to the rythem of each &quot;hwoa&quot; and &quot;haah&quot; from Bob&#39;s mouth.]
+(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[This moment of discomfort stretches for an excessively long time, tuned to the rhythm of each &quot;hwoa&quot; and &quot;haah&quot; from Bob&#39;s mouth.]
 
 (click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Then Bob blinks to signify that he had procressed what Job was saying.]
 
-(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Job nods his head slowly in hesitation and squints his eyes, &quot;o—k, you do you. Anyways, I&#39;ve been coming here quite a lot. Never seen the owner, but that barista seems to have been here since forever. I always liked to order a black coffee, with a tint of sugar and some milk mixed in.&quot;]
-
-(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[&quot;It&#39;s certainly peaceful in here, away from the traffic. Lots of people come in before they go to work, you look like one of those.&quot;]
-
-(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[&quot;So yeah, that&#39;s about all there is to this place. Anything else?&quot; Job asks.
+(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Job nods his head slowly in hesitation and squints his eyes.](click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[(dialog: &quot;O—k, you do you. Anyways, I&#39;ve been coming here quite a lot. Never seen the owner, but that barista seems to have been here since forever. I always liked to order a black coffee, with a tint of sugar and some milk mixed in.&quot;, &quot;continue&quot;)](click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[(dialog: &quot;It&#39;s certainly peaceful in here, away from the traffic. Lots of people come in before they go to work, you look like one of those.&quot;, &quot;continue&quot;)](click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[(dialog: &quot;So yeah, that&#39;s about all there is to this place. Anything else?&quot;, &quot;continue&quot;)
 
 (if:(history: where its name is &quot;gaze outside&quot;)&#39;s length &gt;= 1)[[[gaze outside -&gt; gaze outside 2]]](else:)[[[gaze outside-&gt;gaze outside]]]
-[[leave Job -&gt; coffee shop]]]</tw-passagedata><tw-passagedata pid="47" name=" coffee shop" tags="" position="1358,513.5" size="100,100">Bob goes over to the entrance of the coffee shop.
+[[leave Job -&gt; coffee shop]]]</tw-passagedata><tw-passagedata pid="46" name=" coffee shop" tags="" position="1729,539.5" size="100,100">Bob goes over to the entrance of the coffee shop.
 
 [[order a latte]]
 [[order a styrofoam cup of lukewarm water]]
-[[order generic coffee]]
-[[sit down on the floor]]</tw-passagedata><tw-passagedata pid="48" name=" gaze outside 2" tags="" position="1747,799.5" size="100,100">(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[&quot;You sure like looking outside huh?&quot; Job says.
+[[order usual coffee]]
+[[sit down on the floor]]</tw-passagedata><tw-passagedata pid="47" name=" gaze outside 2" tags="" position="2137,803.5" size="100,100">(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[&quot;You sure like looking outside huh?&quot; Job says.
 
 [[look at the counter -&gt; look at the counter 2]]
-[[leave Job -&gt; coffee shop]]]</tw-passagedata><tw-passagedata pid="49" name=" look at the counter 2" tags="" position="1624,802.5" size="100,100">(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[&quot;You sure like looking at that counter huh?&quot; Job says.
+[[leave Job -&gt; coffee shop]]]</tw-passagedata><tw-passagedata pid="48" name=" look at the counter 2" tags="" position="2023,801.5" size="100,100">(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[&quot;You sure like looking at that counter huh?&quot; Job says.
 
 [[gaze outside -&gt; gaze outside 2]]
-[[leave Job -&gt; coffee shop]]]</tw-passagedata><tw-passagedata pid="50" name="get the key" tags="" position="1512,802.5" size="100,100">(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob looks down at the pocket where Job stashed the silver key.]
+[[leave Job -&gt; coffee shop]]]</tw-passagedata><tw-passagedata pid="49" name="get the key" tags="" position="1912,802.5" size="100,100">(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob looks down at the pocket where Job stashed the silver key.](click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[(dialog: &quot;What are you looking for, the key?&quot;, &quot;continue&quot;)]
 
-(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[&quot;What are you looking for, the key?&quot; Job takes the key out from his pocket, &quot;is there something you need with it?&quot;
+(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Job takes the key out from his pocket.](click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[(dialog: &quot;Is there something you need with it?&quot;, &quot;continue&quot;)
 
-(t8n:&quot;dissolve&quot;)+(t8n-time:3s)+(link:&quot;nod your head&quot;)[Bob nods his head.
+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)+(link:&quot;nod your head&quot;)[Bob nods his head(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[(dialog: &quot;Is this something to do with your boss?&quot;, &quot;continue&quot;)
 
-(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[&quot;Is this something to do with your boss?&quot; Job asks.
+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)+(link:&quot;nod your head&quot;)[Bob nods his head
 
-(t8n:&quot;dissolve&quot;)+(t8n-time:3s)+(link:&quot;nod your head&quot;)[(set: $gotsilverkey to true)Bob nods his head.
+(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Job&#39;s tone grows more serious.(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[(dialog: &quot;Is he in trouble?&quot;, &quot;continue&quot;)
 
-(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Job&#39;s tone grows more serious, &quot;is he in trouble?&quot;
+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)+(link:&quot;nod your head&quot;)[Bob nods his head
 
-(t8n:&quot;dissolve&quot;)+(t8n-time:3s)+(link:&quot;nod your head&quot;)[Job sighs, &quot;he told me something might happen to him, I guess this is it. Here, &quot; Job hands the key over to Bob, &quot;do what you gotta do with it.&quot;
+(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Job sighs.(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[(dialog: &quot;He told me something might happen to him, I guess this is it. Here, do what you gotta do with it.&quot;, &quot;continue&quot;)
 
-[[go to the office]]]]]]]]
-</tw-passagedata><tw-passagedata pid="51" name="go to the office" tags="" position="959,652.5" size="100,100">(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[With the silver key, Bob goes to the office.]
+(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Job hands the key over to Bob.
+
+(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[[[go to the office-&gt;go to the office]]]]]]]]]]]]]
+</tw-passagedata><tw-passagedata pid="50" name="go to the office" tags="" position="789,631.5" size="100,100">(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[With the silver key, Bob goes to the office.]
 
 [[scream]]
-[[go to your boss&#39;s office]]</tw-passagedata><tw-passagedata pid="52" name="go to your boss&#39;s office" tags="" position="553,841.5" size="100,100">(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob returns to the boss&#39;s office, which is still eerily quiet. Nothing from the secret chamber can be heard from outside.]
+[[go to your boss&#39;s office]]</tw-passagedata><tw-passagedata pid="51" name="go to your boss&#39;s office" tags="" position="655,1369.5" size="100,100">(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob returns to the boss&#39;s office.](if: $rippedpainting is true)[The ripped painting behind the desk now looks very pathetic, a tragic waste.]
 
-[[press the button]] 
+(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[[[press the button-&gt;press the button]] 
 [[check the wall]]
-[[check the window]]</tw-passagedata><tw-passagedata pid="53" name=" floor2" tags="" position="2181,784.5" size="100,100">(set: $nocoffee to true)(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob continues to sit on the floor.]
+[[check the window]]]</tw-passagedata><tw-passagedata pid="52" name=" floor2" tags="" position="2247,641.5" size="100,100">(set: $nocoffee to true)(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob continues to sit on the floor.]
 
 (click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[&quot;Alright, that&#39;s it!&quot; The barista yells angrily, &quot;get out of here! You&#39;re not welcome here anymore!&quot; The barista drags Bob outside the coffee shop.]
 
 (click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob finally gets up.]
 
-(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob decides to go to the (t8n-arrive:&quot;dissolve&quot;)+(t8n-time:3s)[[office-&gt;office]].]</tw-passagedata><tw-passagedata pid="54" name="office" tags="" position="440,582.5" size="100,100">(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[(link:&quot;put your hand up close to your face&quot;)[Bob leaves the shop and continues his journey to the office with his hand again uncomfortably up close to his face.(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[]
+(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob decides to go to the (t8n-arrive:&quot;dissolve&quot;)+(t8n-time:3s)[[office-&gt;office]].]</tw-passagedata><tw-passagedata pid="53" name="office" tags="" position="444,579.5" size="100,100">(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob leaves the shop and continues his journey to the office.
 
-(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[It is then, after he puts his hand down, when he realizes that nobody is here. The office is completely empty.
+(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Once he steps inside the familiar office hallway, he realizes that nobody is here. The office is completely empty.
 
 (click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob checks each cubicle, the meeting room, and the (t8n-arrive:&quot;dissolve&quot;)+(t8n-time:3s)[[broom closet-&gt;broom closet]]. They are all (text-colour:red)[&#39;&#39;empty&#39;&#39;].
 
 [[check your boss&#39;s office]]
-[[scream]]]]]]</tw-passagedata><tw-passagedata pid="55" name=" leave the apartment 2" tags="" position="1186,517.5" size="100,100">(if:(history: where it is &quot;Go back to the bedroom&quot;)&#39;s length &gt;= 3)[Bob finally leaves his apartment, today must&#39;ve been quite a journey for him already.](else:)[Bob leaves his apartment.]
+[[check cubicle #1]]
+[[check cubicle #2]]
+[[check cubicle #3]]
+[[scream]]]]]</tw-passagedata><tw-passagedata pid="54" name=" leave the apartment 2" tags="" position="1577,521.5" size="100,100">(if:(history: where it is &quot;Go back to the bedroom&quot;)&#39;s length &gt;= 3)[Bob finally leaves his apartment, today must&#39;ve been quite a journey for him already.](else:)[Bob leaves his apartment.]
 
 (click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob goes to visit the generic coffee shop, which is a greatly fulfilling moment in his otherwise mundane routine.]
 
@@ -370,7 +421,7 @@ The barista looks at him in confusion. Other customers awkwardly walk around Bob
 
 [[go to the office-&gt;office]]
 [[look around]]
-[[return to the apartment]]]</tw-passagedata><tw-passagedata pid="56" name="door" tags="" position="1585,1690.5" size="100,100">(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[//the door reveals a large, dilapidated room//]
+[[return to the apartment]]]</tw-passagedata><tw-passagedata pid="55" name="door" tags="" position="1825,1680.5" size="100,100">(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[//the door reveals a large, dilapidated room//]
 
 (click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[//papers all over the ground, desks torn and broken cabinets on the ground//]
 
@@ -380,12 +431,12 @@ The barista looks at him in confusion. Other customers awkwardly walk around Bob
 
 (click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[//a small menu pops up on the screen//]
 
-(t8n-arrive:&quot;dissolve&quot;)+(t8n-time:3s)(click-goto:?page,&quot;computer menu&quot;)]]</tw-passagedata><tw-passagedata pid="57" name="return to the apartment" tags="" position="159,394.5" size="100,100">Bob goes back into his apartment.
+(t8n-arrive:&quot;dissolve&quot;)+(t8n-time:3s)(click-goto:?page,&quot;computer menu&quot;)]]</tw-passagedata><tw-passagedata pid="56" name="return to the apartment" tags="" position="163,402.5" size="100,100">Bob goes back into his apartment.
 
-(if: $nocoffee is false)[[leave the apartment]]](else:)[[[leave the apartment -&gt; leave the apartment 2]]]
+(if: $nocoffee is false)[[[leave the apartment-&gt;leave the apartment]]](else:)[[[leave the apartment -&gt; leave the apartment 2]]]
 [[go to the bathroom]]
 [[go to the bedroom]]
-</tw-passagedata><tw-passagedata pid="58" name="computer menu" tags="" position="1582,1834.5" size="100,100">###Narration Logs
+</tw-passagedata><tw-passagedata pid="57" name="computer menu" tags="" position="1831,1793.5" size="100,100">###Narration Logs
 ####Below are logs from previous interactions between older iterations of Bob and the Narrator.
 
 &#96;[REDACTED]&#96;
@@ -397,6 +448,7 @@ The barista looks at him in confusion. Other customers awkwardly walk around Bob
 &#96;[REDACTED]&#96;
 &#96;[REDACTED]&#96;
 [[#35 Bob Iteration]]
+(t8n-arrive:&quot;blur&quot;)+(t8n-time:3s)[[Run Current Bob Iteration-&gt;Run Current Bob Iteration]]
 
 
 
@@ -446,7 +498,7 @@ The barista looks at him in confusion. Other customers awkwardly walk around Bob
 
 
 
-</tw-passagedata><tw-passagedata pid="59" name="#9 Bob Iteration" tags="" position="1405,1979.5" size="100,100">Narrator: Bob wakes up in his apartment in the city. He is a human. He has eyes and eyebrows and eyelashes and a nose. Perhaps his most distinctive feature is how average a person he is. He looks around his room.
+</tw-passagedata><tw-passagedata pid="58" name="#9 Bob Iteration" tags="" position="1673,1953.5" size="100,100">Narrator: Bob wakes up in his apartment in the city. He is a human. He has eyes and eyebrows and eyelashes and a nose. Perhaps his most distinctive feature is how average a person he is. He looks around his room.
 
 Narrator: Bob checks the clock, it reads 7:45. There is not much else to say here.
 
@@ -462,7 +514,7 @@ Narrator: Bob decides to save his coworkers and defeat his malevolent boss once 
 
 Narrator: Bob uses a trap&#96;[REDACTED]&#96;
 
-[[return to menu-&gt;computer menu]] </tw-passagedata><tw-passagedata pid="60" name="#35 Bob Iteration" tags="" position="1583,1981.5" size="100,100">Narrator: Bob wakes up in his apartment in the city. He is a human. He has eyes and eyebrows and eyelashes and a nose. Perhaps his most distinctive feature is how average a person he is. He looks around his room.
+[[return to menu-&gt;computer menu]] </tw-passagedata><tw-passagedata pid="59" name="#35 Bob Iteration" tags="" position="1851,1955.5" size="100,100">Narrator: Bob wakes up in his apartment in the city. He is a human. He has eyes and eyebrows and eyelashes and a nose. Perhaps his most distinctive feature is how average a person he is. He looks around his room.
 
 &#96;[REDACTED]&#96;
 
@@ -487,7 +539,7 @@ Narrator: A struggle for the last key left Bob exhausted. His evil boss is aroun
 &#96;[REDACTED]&#96;
 
 [[return to menu-&gt;computer menu]] 
-</tw-passagedata><tw-passagedata pid="61" name="#68 Bob Iteration" tags="" position="1742,1959.5" size="100,100">&#96;[REDACTED]&#96;
+</tw-passagedata><tw-passagedata pid="60" name="#68 Bob Iteration" tags="" position="2010,1933.5" size="100,100">&#96;[REDACTED]&#96;
 
 Narrator: Bob discovers that the boss has been using mind control to control his coworkers&#39; every move.
 
@@ -505,7 +557,7 @@ Narrator: Bob smashes his boss&#39;s coffee mug on the ground, hurls his desk up
 
 &#96;[REDACTED]&#96;
 
-[[return to menu-&gt;computer menu]] </tw-passagedata><tw-passagedata pid="62" name="RDEACTED" tags="" position="1255,1977.5" size="100,100">Bob: Hello! Hello! Please. Please let me out. I&#39;m not crazy.
+[[return to menu-&gt;computer menu]] </tw-passagedata><tw-passagedata pid="61" name="RDEACTED" tags="" position="1523,1951.5" size="100,100">Bob: Hello! Hello! Please. Please let me out. I&#39;m not crazy.
 
 Boss: I don&#39;t know what is going on with my employees this past few weeks. I&#39;m very confused as well. But I know one thing for sure, you&#39;ve all gone insane, trying to put me down for no reason.
 
@@ -525,9 +577,227 @@ Boss: There you go. Finally. &#96;*grabs door handle*&#96; You got anything else
 
 Boss: Well, alright then. Don&#39;t worry, you&#39;ll have some company soon. &#96;*door closes*&#96;
 
-[[return to menu-&gt;computer menu]]</tw-passagedata><tw-passagedata pid="63" name="go to sleep 2" tags="" position="32,1364.5" size="100,100">(set: $ending to it + 1)Ending $ending/10: A Normal Day
+[[return to menu-&gt;computer menu]]</tw-passagedata><tw-passagedata pid="62" name="go to sleep 2" tags="" position="308,1511.5" size="100,100">(set: $ending to it + 1)Ending $ending/7: A Normal Day
 
-[[wake up]]</tw-passagedata></tw-storydata>
+(t8n-arrive:&quot;blur&quot;)+(t8n-time:3s)(click-goto:?page,&quot;knock&quot;)</tw-passagedata><tw-passagedata pid="63" name="Bob faints" tags="" position="1329,924.5" size="100,100">&quot;What a pain in my buttocks,&quot; //the Narrator stops and lets out a disgruntled sigh,// &quot;why does it have to be me to narrate these people? How come they are granted a voice to guide them but I am not?&quot;
+
+(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[&quot;But wait,&quot; //the Narrator pauses. He squints his eyes, looking as if he just had a moment of clarity,// &quot;what if I have someone looking over me as well, what if I’m being told what to say and what to do, how to act and how to think, what if my every word is currently being thought of and written out at this very mom–&quot;]
+
+(click-goto:?page,&quot;message&quot;)</tw-passagedata><tw-passagedata pid="64" name="message" tags="" position="1335,1050.5" size="100,100">(if:visits is 1)[(set: $ending to it + 1)]
+
+
+
+
+
+
+
+
+
+
+
+
+
+(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;=XXX=&quot;)[//What a pain in my buttocks, let us begin anew.//]
+
+(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Ending $ending/7: What A Pain In My Buttocks]
+(click-goto:?page,&quot;wake up&quot;)
+</tw-passagedata><tw-passagedata pid="65" name="Run Current Bob Iteration" tags="" position="2152,1919.5" size="100,100">(if:visits is 1)[(set: $ending to it + 1)](click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Ending $ending/7: #70 Bob Iteration]
+
+(set: $hours to 7)(set: $seconds to 44)(set: $clean to false)Bob wakes up in his apartment.
+
+[[check the time-&gt;check the time on the clock]]
+[[leave the room]] 
+[[check under the bed]]
+
+</tw-passagedata><tw-passagedata pid="66" name="walk outside" tags="" position="1343,779.5" size="100,100">(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Suddenly, Bob stops at the entrance of the shop. He proceeds to scratch his neck, his eyebrows furrows–he is thinking about something.]
+
+(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[He looks around uneasily. He feels as if someone is watching him, detailing all his actions and gestures, and even has burrowed into his mind to gain access to his every thought and emotion.]
+
+(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[He thinks he can almost hear a voice, talking over and over about him. It is always somewhere in the distance, as if coming from a room that suppressed much of its volume.]
+
+(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[He looks around uneasily. He feels as if someone is watching him, detailing all his actions and gestures, and even has burrowed into his mind to gain access to his every thought and emotion.]
+
+(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob feels his kidney start to pound against his stomach, perhaps because of the styrofoam cup of lukewarm water, his head also begins to spin, and suddenly, his vision (text-style:&quot;fade-in-out&quot;)[&#39;&#39;blurs&#39;&#39;] and darkens, and Bob passes out on the street.]
+
+(click-goto:?page,&quot;Bob faints&quot;)</tw-passagedata><tw-passagedata pid="67" name="knock" tags="" position="639,1829" size="100,100">(set: $hours to 2)(set: $seconds to 53)(set: $midnight to true)(dialog: &quot;Donk, donk, donk!&quot;, &quot;exit&quot;)(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[=//While sleeping soundly like a baby, Bob is woken up by a strange knocking on the door.//
+
+[[ignore the sound]]
+[[check the time on the clock]] 
+[[check under the bed]] 
+[[go open the door]]</tw-passagedata><tw-passagedata pid="68" name="bedroom 2" tags="" position="735,1704.5" size="100,100">Bob returns to his bedroom.
+
+[[check the time on the clock]] 
+[[check under the bed]] 
+[[go back to sleep-&gt;wake up]] </tw-passagedata><tw-passagedata pid="69" name="regulars 2" tags="" position="1960,530.5" size="100,100">(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob walks over to Job.]
+
+(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[(dialog: &quot;Oh, hi again, uh... sir. What do you need?&quot;, &quot;exit&quot;)
+[[gaze outside]]
+[[look at the counter]]
+[[leave Job -&gt; coffee shop]]
+(if: $talkedtoboss is true)[[get the key]]]</tw-passagedata><tw-passagedata pid="70" name="return to the office" tags="" position="684,530.5" size="100,100">Bob returns to the office hall.
+
+[[return to the apartment]]
+[[check cubicle #1]]
+[[check cubicle #2]]
+[[check cubicle #3]]
+[[check your boss&#39;s office]]
+[[scream]]</tw-passagedata><tw-passagedata pid="71" name="check the shower" tags="" position="20,1358.5" size="100,100">(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob opens the curtains to his shower, he&#39;s not sure what he would find here except for a clean, smooth bathtub with a generic brand soap.]
+
+(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob smells his armpits and decides that he won&#39;t need the shower today.
+
+[[check the drawer]]
+[[check the mirror]]
+[[take a dump]]
+[[wash your hands]]]</tw-passagedata><tw-passagedata pid="72" name="check the drawer" tags="" position="145,1356.5" size="100,100">(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob opens his drawers with all his sanitary needs. There&#39;s a toothpaste, an Elmers glue beside it, a backup washcloth, five toothbrushes, a hairbrush, and a photo of himself.
+
+[[check the shower]]
+[[check the mirror]]
+[[take a dump]]
+[[wash your hands]]]</tw-passagedata><tw-passagedata pid="73" name="check the mirror" tags="" position="249,1247.5" size="100,100">(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob looks blankly at himself in the mirror. He lifts his cheeks and then smiles into the mirror. What a wholesome moment.]
+
+(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob notices a small sticky note on the edge of the mirror.
+
+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)+(link:&quot;read the note&quot;)[(dialog: &quot;found a keycard in the trashcan in Boss&#39;s office, don&#39;t ask why I was digging around there. It was on the top, looks real important so I thought it must&#39;ve accidently fell in, I thought I&#39;d hang onto it until Boss shows up, it&#39;s been awhile now, kind of worried about where he is. Anyways, if you want to check it out I left it in cubicle #3&quot;, &quot;continue&quot;)
+
+[[check the shower]]
+[[check the drawer]]
+[[take a dump]]
+[[wash your hands]]]]</tw-passagedata><tw-passagedata pid="74" name="take a dump" tags="" position="121,1517" size="100,100">(set: $poop to true)(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob, out of nowhere, has an incredible urge to defecate. He slams onto the toilet and lets it all out.]
+
+(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[After a few minutes, he wipes and gets up, smiling with relief.
+
+[[check the shower]]
+[[check the mirror]]
+[[take a dump]]
+[[wash your hands]]]</tw-passagedata><tw-passagedata pid="75" name="wash your hands" tags="" position="182,1693.5" size="100,100">(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob walks up to the sink and turns on the water to wash his hands. It&#39;s never bad to keep yourself sanitized. He makes sure that he gets the narrow corners between his fingers and rubs his palm nice and smoothly.
+
+[[check the shower]]
+[[check the mirror]]
+[[take a dump]]
+[[wash your hands]]
+[[go outside-&gt;hallway]]]</tw-passagedata><tw-passagedata pid="76" name="hallway" tags="" position="55,1692.5" size="100,100">(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob steps out into the hallway. (if: $poop is true)[He has either intentionally chosen not to wash his disgusting hands or he forgot by accident. Either way, he&#39;s content.](else:)[He ponders where he should go next.]
+
+[[go to the bathroom]]
+[[go to the bedroom]]]
+</tw-passagedata><tw-passagedata pid="77" name="open the door with the keycard" tags="" position="885,1616.5" size="100,100">(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[The door whizzes open. Bob steps inside the crowded room.]
+
+(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[The other Bobs stare blankly at him. Bob waves his hand at the other people and they all wave back. It is like looking at a dozen mirrors, and Bob does not know what to do. He wonders why they are trapped in here.]
+
+(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Suddenly, the Boss appears behind Bob and slides the door shut.]
+(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[(dialog: &quot;Hah hah hah. Finally. My plan has come to fruition. I got you all!&quot;, &quot;continue&quot;)]
+(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[(text-style:&quot;shudder&quot;)[The Boss laughs maniacally and—]
+
+(live: 4s)[(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[//Another Bob slaps Bob&#39;s face to regain his focus. He shows him the palm of his hands which has words written in ink.//(stop:)(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[(dialog: &quot;Shhhh, (text-colour:red)[&#39;&#39;he&#39;&#39;] doesn&#39;t know that the Boss is trapped.&quot;, &quot;continue&quot;)
+
+(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[//He points somewhere in the back. The other Bobs move aside to let Bob see what the one Bob is pointing at.//
+
+(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[//The Bobs make an opening and reveals a message etched onto the wall.//(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[(dialog: &quot;The one who speaks was taken away. Free us and help us find him. He will reveal the truth.&quot;, &quot;continue&quot;)
+(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[]
+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)+(link:&quot;free the Bobs&quot;)[//Bob nods and the other Bobs smiles and nods back. They walk outside and the one Bob looks back at him one last time before leaving the room.//(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[]
+
+(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[(if:visits is 1)[(set: $ending to it + 1)Ending $ending/7: Free The Bobs
+
+(t8n-arrive:&quot;dissolve&quot;)+(t8n-time:3s)(click-goto:?page,&quot;wake up&quot;)]]]]]]]]]]
+</tw-passagedata><tw-passagedata pid="78" name="check cubicle #1" tags="" position="378,739.5" size="100,100">(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob walks over to cubicle #1, hoping to find some clues as to where all his coworkers went.]
+
+(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[The desk was clean and had a desktop setup just like his own. In fact, his entire cubicle space was organized like Bob&#39;s and everyone else&#39;s. There is a large desk in the front and two cabinets on the side.
+
+[[check cubicle #2]]
+[[check cubicle #3]]
+[[check the computer]]
+[[check the cabinets]]
+[[leave-&gt;return to the office]]]
+
+</tw-passagedata><tw-passagedata pid="79" name="check cubicle #2" tags="" position="513,731.5" size="100,100">(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob walks over to cubicle #2, hoping to find some clues as to where all his coworkers went.]
+
+(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[The cubicle doesn&#39;t have anything special, no hints as to where everyone went.
+
+[[check cubicle #1]]
+[[check cubicle #3]]
+[[check the computer-&gt; ctco 2]]
+[[check the cabinets-&gt;ctc 2]]
+[[leave-&gt;return to the office]]]</tw-passagedata><tw-passagedata pid="80" name="check cubicle #3" tags="" position="820,755.5" size="100,100">(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob walks over to cubicle #3.]
+
+(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[It looks like nothing is out of place, the cubicle space looks just like his own, except for Bob&#39;s own very special bobblehead, which he likes to call &#39;bob&#39;blehead.
+
+[[check the computer-&gt;ctco 3]]
+[[check the cabinets-&gt;ctc 3]]
+[[check cubicle #1]]
+[[check cubicle #2]]
+[[leave-&gt;return to the office]]]
+
+</tw-passagedata><tw-passagedata pid="81" name="check the computer" tags="" position="411,874.5" size="100,100">(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob checks the computer, its screen is still turned on. A list of emails appear on the screen, but there&#39;s only one email. For some reason, the Boss decided to implement computers that can only send and receive emails into the office.
+
+(t8n:&quot;dissolve&quot;)+(link-repeat:&quot;read the email&quot;)[(dialog: &quot;
+Subject: Employees going awry
+
+Hey Frank,
+
+Some other employees been acting up a lot. Something ain&#39;t right. I need you can ask around, see what&#39;s going on with the others. I hope I can trust you with this.
+
+Yours Truly,
+The Man With The Plan,
+
+P.S. This&#39;ll be your chance to grab employee of the month.&quot;, &quot;exit&quot;)]
+
+[[check the cabinets]]
+[[check cubicle #2]]
+[[check cubicle #3]]
+[[leave-&gt;return to the office]]]
+
+</tw-passagedata><tw-passagedata pid="82" name="check the cabinets" tags="" position="252,880.5" size="100,100">Doesn&#39;t seem to be anything other than paperwork, there is however a small figurine of a cool robed figure.
+
+[[check the computer]]
+[[check cubicle #2]]
+[[check cubicle #3]]
+[[leave-&gt;return to the office]]</tw-passagedata><tw-passagedata pid="83" name=" ctco 2" tags="" position="531,881.5" size="100,100">(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob checks the computer, its screen is still turned on. A list of emails appear on the screen, but there&#39;s only one email.
+
+(t8n:&quot;dissolve&quot;)+(link-repeat:&quot;read the email&quot;)[(dialog: &quot;
+Subject: IMPTANT PLESE RAED
+
+Stven,
+
+I CNT TKAL ANYMORA! im strting to have grsat deel of truble writgn and typing too i dnt kno wuts goin on plaese hlep i thnk somone si messign wisth me i nvea yuso ato trelaisll the abasdooss ASLZNLI sIOA sdnaoihfgkslmxzlkksj
+
+shhhh,&quot;, &quot;exit&quot;)]
+
+[[check the cabinets-&gt;ctc 2]]
+[[check cubicle #1]]
+[[check cubicle #3]]
+[[leave-&gt;return to the office]]]
+</tw-passagedata><tw-passagedata pid="84" name="ctc 2" tags="" position="687,885.5" size="100,100">There are stacks of papers piled neatly on top of each other.
+
+[[check the computer-&gt; ctco 2]]
+[[check cubicle #1]]
+[[check cubicle #3]]
+[[leave-&gt;return to the office]]</tw-passagedata><tw-passagedata pid="85" name="ctco 3" tags="" position="810,909.5" size="100,100">(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob checks the computer, he turns on the screen, which was not locked. There&#39;s one email that can be seen. Bob notices that it&#39;s a draft that has not been sent yet.
+
+(t8n:&quot;dissolve&quot;)+(link-repeat:&quot;read the email&quot;)[(dialog: &quot;
+Subject: Crazy Jeremy
+Hey George, 
+
+Have you seen Jeremy lately, he&#39;s been such a clown. Don&#39;t know what he&#39;s doing, been calling himself Bob for some reason. I heard that he&#39;s giving Boss quite the trouble. Breaking his furnitures, ripping apart his old painting of himself, and even smashing his &#39;I am the Boss&#39; mug ever since the Boss went AWOL. If I were you I would go get some memorabilia out of this, show it to the kids one day.
+
+Good Luck,
+Norman&quot;, &quot;exit&quot;)]
+
+[[check the cabinets-&gt;ctc 3]]
+[[check cubicle #1]]
+[[check cubicle #2]]
+[[leave-&gt;return to the office]]]</tw-passagedata><tw-passagedata pid="86" name="ctc 3" tags="" position="928,912.5" size="100,100">(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob opens the cabinets and sees a mess, he fumbles through the wreck and finds a keycard.
+
+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)+(link:&quot;take the keycard&quot;)[(set: $keycard to true)Bob takes the keycard, it looks very important.]
+
+[[check the computer-&gt;ctco 3]]
+[[check cubicle #1]]
+[[check cubicle #2]]
+[[leave-&gt;return to the office]]]
+
+
+
+</tw-passagedata><tw-passagedata pid="87" name="title intro" tags="" position="1063,101.5" size="100,100">(t8n:&quot;blur&quot;)+(t8n-time:4s)[(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;=XXX=&quot;)[#Bob]]
+(t8n:&quot;blur&quot;)+(t8n-time:4s)[(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;=XXX=&quot;)[by Jason Liu]]
+(click-goto:?page,&quot;intro&quot;)</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">"use strict";var _slicedToArray=function(){return function(e,t){if(Array.isArray(e))return e;if(Symbol.iterator in Object(e))return function(e,t){var n=[],r=!0,i=!1,a=void 0;try{for(var o,s=e[Symbol.iterator]();!(r=(o=s.next()).done)&&(n.push(o.value),!t||n.length!==t);r=!0);}catch(e){i=!0,a=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw a}}return n}(e,t);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}!function(){
 /**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.

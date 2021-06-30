@@ -9,7 +9,7 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play index.</tw-noscript></noscript></tw-story>
-<tw-storydata name="index" startnode="19" creator="Twine" creator-version="2.3.14" ifid="2FB68BE1-5079-4AB3-9B24-265EB65B0884" zoom="1" format="Harlowe" format-version="3.2.2" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+<tw-storydata name="index" startnode="67" creator="Twine" creator-version="2.3.14" ifid="2FB68BE1-5079-4AB3-9B24-265EB65B0884" zoom="1" format="Harlowe" format-version="3.2.2" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&display=swap');
 h1 {
   line-height: 200px;
@@ -214,13 +214,15 @@ The barista looks at him in confusion. Other customers awkwardly walk around Bob
 [[go to the bathroom]]
 [[go to the bedroom]]</tw-passagedata><tw-passagedata pid="16" name="ignore the sound" tags="" position="47,1710.5" size="100,100">Bob ignores the knocking sound. It persists for awhile, then stops. 
 
-(t8n-arrive:&quot;blur&quot;)+(t8n-time:3s)[[go back to sleep-&gt;wake up]]</tw-passagedata><tw-passagedata pid="17" name="go open the door" tags="" position="184,1711.5" size="100,100">(set: $bluekey to true)(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[//Bob opens the door.//]
+(t8n-arrive:&quot;blur&quot;)+(t8n-time:3s)[[go back to sleep-&gt;wake up]]</tw-passagedata><tw-passagedata pid="17" name="go open the door" tags="" position="186,1710.5" size="100,100">(set: $bluekey to true)(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[//Bob opens the door.//]
 
 (click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[//The outside breeze flows in from the door, the quiet night is as silent as it is dark. The calm, cool wind brushes against Bob&#39;s face.//]
 
-(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[//A mysterious figure stands ominously in the doorway. He is wearing a dark robe with a hood covering his face.//](click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[(track: &#39;figure&#39;, &#39;play&#39;)(dialog: &quot;Find the truth. End this.&quot;, &quot;continue&quot;)]
+(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[//A mysterious figure stands ominously in the doorway. He is wearing a dark robe with a hood covering his face.//](click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[(track: &#39;figure&#39;, &#39;seek&#39;, 0.2)(track: &#39;figure&#39;, &#39;play&#39;)(dialog: &quot;Find the truth. End this.&quot;, &quot;continue&quot;)]
 
-(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[//The cloaked figure says. He then gives Bob a blue key and then walks away.//]
+(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[//The cloaked figure says.//]
+
+(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[//He then gives Bob a blue key and then walks away.//]
 
 (click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[(track: &#39;breeze&#39;, &#39;fadeout&#39;, 3)//Bob heads back inside his apartment, somewhat confounded by what had just happened.//
 
@@ -233,9 +235,9 @@ The barista looks at him in confusion. Other customers awkwardly walk around Bob
 [[check the drawer]]
 [[check the mirror]]
 [[sit on the toilet]]
-[[wash your hands]]]</tw-passagedata><tw-passagedata pid="19" name="go to the bedroom" tags="" position="133,1367.5" size="100,100">Bob enters his bedroom, he forgot to make his bed today.
+[[wash your hands]]]</tw-passagedata><tw-passagedata pid="19" name="go to the bedroom" tags="" position="133,1366.5" size="100,100">Bob enters his bedroom, he forgot to make his bed today.
 
-(if:visits is 1)[(t8n-arrive:&quot;blur&quot;)+(t8n-time:3s)[[go to sleep-&gt;go to sleep 2]]](else:)[(t8n-arrive:&quot;blur&quot;)+(t8n-time:3s)[[go to sleep-&gt;go to sleep]]]
+(if:visits is 1)[(t8n-arrive:&quot;dissolve&quot;)+(t8n-time:3s)[[go to sleep-&gt;go to sleep 2]]](else:)[(t8n-arrive:&quot;blur&quot;)+(t8n-time:3s)[[go to sleep-&gt;go to sleep]]]
 [[check under the bed]]
 [[check the time]]</tw-passagedata><tw-passagedata pid="20" name="go to sleep" tags="" position="1620,342.5" size="100,100">(set: $message to (random: 1, 7))(set: $clean to false)(set: $hours to 7)(set: $seconds to 44)Bob goes back to sleep, the night goes by while he lies on his bed, a new day begins.
 
@@ -358,18 +360,18 @@ The barista looks at him in confusion. Other customers awkwardly walk around Bob
 (if: $keycard is true)[[open the door with the keycard]]]]]]]
 
 
-</tw-passagedata><tw-passagedata pid="38" name="press the button" tags="" position="1132,1408.5" size="100,100">(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob presses the button. The floor in front of the desk whirs and opens, revealing a flight of stairs that leads down into the unknown.
+</tw-passagedata><tw-passagedata pid="38" name="press the button" tags="" position="1133,1408.5" size="100,100">(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob presses the button. The floor in front of the desk whirs and opens, revealing a flight of stairs that leads down into the unknown.
 
 (if:(history: where its name is &quot;go down the stairs 1&quot;)&#39;s length &gt;= 1)[[[go down the stairs -&gt; go down the stairs 2]]](else:)[[go down the stairs -&gt; go down the stairs 1]]]</tw-passagedata><tw-passagedata pid="39" name="take down the painting" tags="" position="902,1418.5" size="100,100">(set: $rippedpainting to true)Bob rips the painting apart violently, wasting a perfectly good painting. There is nothing behind it except for a blank wall.
 
 [[check the desk]]
-[[check the window]]</tw-passagedata><tw-passagedata pid="40" name=" go down the stairs 2" tags="" position="1221,1528.5" size="100,100">(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob returns to the boss&#39;s secret room.
+[[check the window]]</tw-passagedata><tw-passagedata pid="40" name=" go down the stairs 2" tags="" position="1222,1528.5" size="100,100">(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob returns to the boss&#39;s secret room.
 
 (click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[&quot;Back already?&quot; The boss says snarkily, &quot;are you gonna take another one of my employees? Huh?!&quot;]
 
 (click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[(if: $silverkey is false)[Bob says nothing. He does not have the key to open the door yet, perhaps he wants to ask for forgiveness for stealing the boss&#39;s cheese.](else:)[Bob says nothing.
 
-[[use silver key to open jail door]]]]]</tw-passagedata><tw-passagedata pid="41" name=" go down the stairs 1" tags="" position="1097,1527.5" size="100,100">(set: $flashlight to true)(set: $talkedtoboss to true)(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[The stairs lead down to a dark hallway. The dimly lit path makes it hard to see ahead.]
+[[use silver key to open jail door]]]]]</tw-passagedata><tw-passagedata pid="41" name=" go down the stairs 1" tags="" position="1097,1527.5" size="100,100">(set: $talkedtoboss to true)(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[The stairs lead down to a dark hallway. The dimly lit path makes it hard to see ahead.]
 
 (click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob can hear muffles and scratches ahead of him, then suddenly, a loud screeching sound.]
 
@@ -652,7 +654,7 @@ Boss: There you go. Finally. &#96;*grabs door handle*&#96; You got anything else
 
 Boss: Well, alright then. Don&#39;t worry, you&#39;ll have some company soon. &#96;*door closes*&#96;
 
-[[return to menu-&gt;computer menu]]</tw-passagedata><tw-passagedata pid="62" name="go to sleep 2" tags="" position="31,1494.5" size="100,100">(set: $ending to it + 1)Ending $ending/7: A Normal Day
+[[return to menu-&gt;computer menu]]</tw-passagedata><tw-passagedata pid="62" name="go to sleep 2" tags="" position="23,1489.5" size="100,100">(set: $ending to it + 1)Ending $ending/7: A Normal Day
 
 (t8n-arrive:&quot;blur&quot;)+(t8n-time:3s)(click-goto:?page,&quot;knock&quot;)</tw-passagedata><tw-passagedata pid="63" name="Bob faints" tags="" position="2087,903.5" size="100,100">(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[(track: &#39;sigh&#39;, &#39;play&#39;)&quot;What a pain in my buttocks,&quot; //the Narrator stops and lets out a disgruntled sigh,// &quot;why does it have to be me to narrate these people? How come they are granted a voice to guide them but I am not?&quot;]
 
@@ -692,7 +694,7 @@ Boss: Well, alright then. Don&#39;t worry, you&#39;ll have some company soon. &#
 
 (click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob feels his kidney start to pound against his stomach, perhaps because of the styrofoam cup of lukewarm water, his head also begins to spin, and suddenly, his vision (text-style:&quot;fade-in-out&quot;)[&#39;&#39;blurs&#39;&#39;] and darkens, and Bob passes out on the street.]
 
-(click-goto:?page,&quot;Bob faints&quot;)</tw-passagedata><tw-passagedata pid="67" name="knock" tags="" position="129,1610" size="100,100">(set: $hours to 2)(set: $seconds to 53)(set: $midnight to true)(dialog: &quot;Donk, donk, donk!&quot;, &quot;exit&quot;)(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[=//While sleeping soundly like a baby, Bob is woken up by a strange knocking on the door.//
+(click-goto:?page,&quot;Bob faints&quot;)</tw-passagedata><tw-passagedata pid="67" name="knock" tags="" position="142,1592.5" size="100,100">(set: $hours to 2)(set: $seconds to 53)(set: $midnight to true)//While sleeping soundly like a baby, Bob is woken up by a strange knocking on the door.//
 
 [[ignore the sound]]
 [[check the time on the clock]] 
@@ -903,9 +905,9 @@ breathing: ./audio/breathing.mp3
 phone: ./audio/phone.mp3
 paper: ./audio/paper.mp3
 message: ./audio/message.mp3
-figure: ./audio/figure.mp3
 breeze: ./audio/breeze.mp3
-knock: ./audio/knock.mp3</tw-passagedata><tw-passagedata pid="89" name="start" tags="" position="1529,22" size="100,100">
+knock: ./audio/knock.mp3
+figure: ./audio/figure.m4a</tw-passagedata><tw-passagedata pid="89" name="start" tags="" position="1529,22" size="100,100">
 
 
 

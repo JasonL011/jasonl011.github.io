@@ -233,7 +233,7 @@ The barista looks at him in confusion. Other customers awkwardly walk around Bob
 [[check the drawer]]
 [[check the mirror]]
 [[sit on the toilet]]
-[[wash your hands]]]</tw-passagedata><tw-passagedata pid="19" name="go to the bedroom" tags="" position="133,1367.5" size="100,100">Bob enters his bedroom, he forgot to make his bed today.
+[[wash your hands]]]</tw-passagedata><tw-passagedata pid="19" name="go to the bedroom" tags="" position="132,1366.5" size="100,100">Bob enters his bedroom, he forgot to make his bed today.
 
 (if:visits is 1)[(t8n-arrive:&quot;blur&quot;)+(t8n-time:3s)[[go to sleep-&gt;go to sleep 2]]](else:)[(t8n-arrive:&quot;blur&quot;)+(t8n-time:3s)[[go to sleep-&gt;go to sleep]]]
 [[check under the bed]]
@@ -652,7 +652,7 @@ Boss: There you go. Finally. &#96;*grabs door handle*&#96; You got anything else
 
 Boss: Well, alright then. Don&#39;t worry, you&#39;ll have some company soon. &#96;*door closes*&#96;
 
-[[return to menu-&gt;computer menu]]</tw-passagedata><tw-passagedata pid="62" name="go to sleep 2" tags="" position="31,1494.5" size="100,100">(set: $ending to it + 1)Ending $ending/7: A Normal Day
+[[return to menu-&gt;computer menu]]</tw-passagedata><tw-passagedata pid="62" name="go to sleep 2" tags="" position="23,1489.5" size="100,100">(set: $ending to it + 1)Ending $ending/7: A Normal Day
 
 (t8n-arrive:&quot;blur&quot;)+(t8n-time:3s)(click-goto:?page,&quot;knock&quot;)</tw-passagedata><tw-passagedata pid="63" name="Bob faints" tags="" position="2087,903.5" size="100,100">(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[(track: &#39;sigh&#39;, &#39;play&#39;)&quot;What a pain in my buttocks,&quot; //the Narrator stops and lets out a disgruntled sigh,// &quot;why does it have to be me to narrate these people? How come they are granted a voice to guide them but I am not?&quot;]
 
@@ -692,7 +692,7 @@ Boss: Well, alright then. Don&#39;t worry, you&#39;ll have some company soon. &#
 
 (click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob feels his kidney start to pound against his stomach, perhaps because of the styrofoam cup of lukewarm water, his head also begins to spin, and suddenly, his vision (text-style:&quot;fade-in-out&quot;)[&#39;&#39;blurs&#39;&#39;] and darkens, and Bob passes out on the street.]
 
-(click-goto:?page,&quot;Bob faints&quot;)</tw-passagedata><tw-passagedata pid="67" name="knock" tags="" position="129,1610" size="100,100">(set: $hours to 2)(set: $seconds to 53)(set: $midnight to true)(dialog: &quot;Donk, donk, donk!&quot;, &quot;exit&quot;)(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[=//While sleeping soundly like a baby, Bob is woken up by a strange knocking on the door.//
+(click-goto:?page,&quot;Bob faints&quot;)</tw-passagedata><tw-passagedata pid="67" name="knock" tags="" position="137,1591.5" size="100,100">(set: $hours to 2)(set: $seconds to 53)(set: $midnight to true)(t8n:&quot;blur&quot;)+(t8n-time:3s)[=//While sleeping soundly like a baby, Bob is woken up by a strange knocking on the door.//
 
 [[ignore the sound]]
 [[check the time on the clock]] 

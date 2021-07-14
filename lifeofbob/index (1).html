@@ -9,7 +9,7 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play index.</tw-noscript></noscript></tw-story>
-<tw-storydata name="index" startnode="89" creator="Twine" creator-version="2.3.14" ifid="2FB68BE1-5079-4AB3-9B24-265EB65B0884" zoom="1" format="Harlowe" format-version="3.2.2" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+<tw-storydata name="index" startnode="51" creator="Twine" creator-version="2.3.14" ifid="2FB68BE1-5079-4AB3-9B24-265EB65B0884" zoom="1" format="Harlowe" format-version="3.2.2" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&display=swap');
 
 img {
@@ -330,7 +330,7 @@ The barista looks at him in confusion. Other customers awkwardly walk around Bob
 
 (track: &#39;door&#39;, &#39;seek&#39;, 0.5)
 (track: &#39;door&#39;, &#39;play&#39;)
-</tw-passagedata><tw-passagedata pid="33" name="check your boss&#39;s office" tags="" position="1429,768.5" size="100,100">(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob walks into the boss&#39;s office. The office is much more open than the rest of the crowded workplace. The room is eerily quiet, quieter than it is in the office. The main desk sits in the back, a formidable painting of the Boss watches over the entire room.]
+</tw-passagedata><tw-passagedata pid="33" name="check your boss&#39;s office" tags="" position="1429,768.5" size="100,100">(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob walks into the boss&#39;s office. The office is much more open than the rest of the crowded workplace. The main desk sits in the back, a formidable painting of the Boss watches over the entire room. It is eerily quiet in here, even quieter than the rest of the workplace. ]
 
 (click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob looks around the room.
 
@@ -352,7 +352,7 @@ The barista looks at him in confusion. Other customers awkwardly walk around Bob
 [[press the button]]
 [[check the window]]]]]
 
-(track: &#39;cabinet&#39;, &#39;play&#39;)</tw-passagedata><tw-passagedata pid="36" name="check the wall" tags="" position="907,1279.5" size="100,100">(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob checks the wall, there&#39;s a large rectangular painting framed behind the desk. It depicts the boss wearing a trench coat and looking rather stoically.]
+(track: &#39;cabinet&#39;, &#39;play&#39;)</tw-passagedata><tw-passagedata pid="36" name="check the wall" tags="" position="907,1278.5" size="100,100">(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob checks the wall, there&#39;s a large rectangular painting framed behind the desk. It depicts the boss wearing a trench coat and looking rather stoically.]
 
 [[take down the painting]]
 [[check the window]]
@@ -364,9 +364,9 @@ The barista looks at him in confusion. Other customers awkwardly walk around Bob
 
 (t8n:&quot;dissolve&quot;)+(t8n-time:3s)+(link:&quot;walk up the stairs&quot;)[Bob walks up the stairs. At the end of the stairs there&#39;s a door.
 
-(t8n:&quot;dissolve&quot;)+(t8n-time:3s)+(link:&quot;open the door&quot;)[Bob opens the door to a wide room. In front of him, there&#39;s a large, wide glass wall with a sliding door in the middle. A dozen or so people are locked behind the glass wall. Some are banging against the wall, Bob can hear their faint screams echoing on and on.
+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)+(link:&quot;open the door&quot;)[Bob opens the door to a wide room. In front of him, there&#39;s a large, wide glass wall with a sliding door in the middle. A dozen or so people are locked behind the glass wall. Some are banging against the wall, others are slouched against the wall and rocking back and forth shakily. Bob can hear their faint whispers echoing on and on.
 
-(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Upon closer inspection, Bob realizes that each and every one of those people look just like him. They are all &#39;&#39;(text-colour:yellow)[Bob]&#39;&#39;.
+(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Upon closer inspection, Bob realizes that each and every one of these people are his coworkers.
 
 (click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Shocked, Bob walks over to try to open the sliding door, but he discovers that it requires a yellow keycard. (if: $keycard is false)[He faintly remembers seeing one in the office, but cannot recall where exactly he saw it.
 
@@ -374,11 +374,11 @@ The barista looks at him in confusion. Other customers awkwardly walk around Bob
 (if: $keycard is true)[[open the door with the keycard]]]]]]]
 
 
-</tw-passagedata><tw-passagedata pid="38" name="press the button" tags="" position="1132,1408.5" size="100,100">(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob presses the button. The floor in front of the desk whirs and opens, revealing a flight of stairs that leads down into the unknown.
+</tw-passagedata><tw-passagedata pid="38" name="press the button" tags="" position="1132,1408.5" size="100,100">(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob presses the button. The floor in front of the desk creaks and opens, revealing a flight of stairs that leads down into the unknown.
 
 (if:(history: where its name is &quot;go down the stairs 1&quot;)&#39;s length &gt;= 1)[[[go down the stairs -&gt; go down the stairs 2]]](else:)[[go down the stairs -&gt; go down the stairs 1]]]
 
-(track: &#39;button&#39;, &#39;play&#39;)</tw-passagedata><tw-passagedata pid="39" name="take down the painting" tags="" position="903,1418.5" size="100,100">(set: $rippedpainting to true)Bob rips the painting apart violently, wasting a perfectly good painting. There is nothing behind it except for a blank wall.
+(track: &#39;button&#39;, &#39;play&#39;)</tw-passagedata><tw-passagedata pid="39" name="take down the painting" tags="" position="908,1406.5" size="100,100">(set: $rippedpainting to true)Bob rips the painting apart violently, wasting a perfectly good painting. There is nothing behind it except for a blank wall.
 
 [[check the desk]]
 [[check the window]]
@@ -487,7 +487,7 @@ The barista looks at him in confusion. Other customers awkwardly walk around Bob
 </tw-passagedata><tw-passagedata pid="50" name="go to the office" tags="" position="1172,761.5" size="100,100">(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[With the silver key, Bob goes to the office.]
 
 [[scream]]
-[[go to your boss&#39;s office]]</tw-passagedata><tw-passagedata pid="51" name="go to your boss&#39;s office" tags="" position="1206,1150.5" size="100,100">(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob returns to the boss&#39;s office.](if: $rippedpainting is true)[The ripped painting behind the desk now looks very pathetic, a tragic waste.]
+[[go to your boss&#39;s office]]</tw-passagedata><tw-passagedata pid="51" name="go to your boss&#39;s office" tags="" position="1142,1130.5" size="100,100">(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob returns to the boss&#39;s office.](if: $rippedpainting is true)[The ripped painting behind the desk now looks very pathetic, a tragic waste.]
 
 (click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[[[press the button-&gt;press the button]] 
 [[check the wall]]
@@ -712,7 +712,7 @@ Boss: Well, alright then. Don&#39;t worry, you&#39;ll have some company soon. &#
 
 (click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob feels his kidney start to pound against his stomach, perhaps because of the styrofoam cup of lukewarm water, his head also begins to spin, and suddenly, his vision (text-style:&quot;fade-in-out&quot;)[&#39;&#39;blurs&#39;&#39;] and darkens, and Bob passes out on the street.]
 
-(click-goto:?page,&quot;Bob faints&quot;)</tw-passagedata><tw-passagedata pid="67" name="knock" tags="" position="144,1583.5" size="100,100">(set: $hours to 2)(set: $seconds to 53)(set: $midnight to true)//While sleeping soundly like a baby, Bob is woken up by a strange knocking on the door.//
+(click-goto:?page,&quot;Bob faints&quot;)</tw-passagedata><tw-passagedata pid="67" name="knock" tags="" position="142,1580.5" size="100,100">(set: $hours to 2)(set: $seconds to 53)(set: $midnight to true)//While sleeping soundly like a baby, Bob is woken up by a strange knocking on the door.//
 
 [[ignore the sound]]
 [[check the time on the clock]] 
@@ -737,7 +737,7 @@ Boss: Well, alright then. Don&#39;t worry, you&#39;ll have some company soon. &#
 [[check cubicle #2]]
 [[check cubicle #3]]
 [[check your boss&#39;s office]]
-[[scream]]</tw-passagedata><tw-passagedata pid="71" name="check the shower" tags="" position="570,1176.5" size="100,100">(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob opens the curtains to his shower, he&#39;s not sure what he would find here except for a clean, smooth bathtub with a generic brand soap.]
+[[scream]]</tw-passagedata><tw-passagedata pid="71" name="check the shower" tags="" position="564,1189.5" size="100,100">(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob opens the curtains to his shower, he&#39;s not sure what he would find here except for a clean, smooth bathtub with a generic brand soap.]
 
 (click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob smells his armpits and decides that he won&#39;t need the shower today.
 
@@ -824,7 +824,7 @@ Boss: Well, alright then. Don&#39;t worry, you&#39;ll have some company soon. &#
 [[check cubicle #2]]
 [[leave-&gt;return to the office]]]
 
-</tw-passagedata><tw-passagedata pid="81" name="check the computer" tags="" position="945,1022.5" size="100,100">(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob checks the computer, its screen is still turned on. A list of emails appear on the screen, but there&#39;s only one email. For some reason, the Boss decided to implement computers that can only send and receive emails into the office.
+</tw-passagedata><tw-passagedata pid="81" name="check the computer" tags="" position="944,1022.5" size="100,100">(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob checks the computer, its screen is still turned on. A list of emails appear on the screen, but there&#39;s only one email. For some reason, the Boss decided to implement computers that can only send and receive emails into the office.
 
 (t8n:&quot;dissolve&quot;)+(link-repeat:&quot;read the email&quot;)[(track: &#39;mouse&#39;, &#39;play&#39;)(dialog: &quot;
 Subject: Employees going awry

@@ -9,7 +9,7 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play index.</tw-noscript></noscript></tw-story>
-<tw-storydata name="index" startnode="54" creator="Twine" creator-version="2.3.14" ifid="2FB68BE1-5079-4AB3-9B24-265EB65B0884" zoom="1" format="Harlowe" format-version="3.2.2" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+<tw-storydata name="index" startnode="28" creator="Twine" creator-version="2.3.14" ifid="2FB68BE1-5079-4AB3-9B24-265EB65B0884" zoom="1" format="Harlowe" format-version="3.2.2" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&display=swap');
 
 img {
@@ -297,9 +297,11 @@ The barista looks at him in confusion. Other customers awkwardly walk around Bob
 (t8n:&quot;dissolve&quot;)+(t8n-time:3s)+(link:&quot;look through the garbage can&quot;)[//nothing but a mess//]
 [[go further down the alley-&gt;go deeper]]]
 
-(track: &#39;street&#39;, &#39;pause&#39;)(track: &#39;street&#39;, &#39;volume&#39;, 0.4)(track: &#39;street&#39;, &#39;play&#39;)
-(track: &#39;breeze&#39;, &#39;loop&#39;, true)(track: &#39;breeze&#39;, &#39;volume&#39;, 0.3)(track: &#39;breeze&#39;, &#39;fadein&#39;, 2)
-(after: 4s)[(track: &#39;breeze2&#39;, &#39;loop&#39;, true)(track: &#39;breeze2&#39;, &#39;volume&#39;, 0.3)(track: &#39;breeze2&#39;, &#39;play&#39;)]</tw-passagedata><tw-passagedata pid="28" name="go deeper" tags="" position="2968,1588.5" size="100,100">//there&#39;s a dark path, and a blue-lit path
+(track: &#39;breeze&#39;, &#39;volume&#39;, 0.2)
+(track: &#39;breeze2&#39;, &#39;volume&#39;, 0.2)
+(track: &#39;street&#39;, &#39;fadeto&#39;, 2, 0.2)
+(track: &#39;breeze&#39;, &#39;loop&#39;, true)(track: &#39;breeze&#39;, &#39;fadein&#39;, 2)
+(after: 4s)[(track: &#39;breeze2&#39;, &#39;loop&#39;, true)(track: &#39;breeze2&#39;, &#39;play&#39;)]</tw-passagedata><tw-passagedata pid="28" name="go deeper" tags="" position="2968,1588.5" size="100,100">//there&#39;s a dark path, and a blue-lit path
 //
 (t8n-arrive:&quot;blur&quot;)+(t8n-time:2s)[[go down the blue path-&gt;go down the blue path]]
 [[go down the dark path]]
@@ -310,7 +312,7 @@ The barista looks at him in confusion. Other customers awkwardly walk around Bob
 
 (track: &#39;wind&#39;, &#39;fadein&#39;, 1)
 (track: &#39;wind&#39;, &#39;fadeout&#39;, 2)
-(after: 3s)[(track: &#39;faint&#39;, &#39;play&#39;)]</tw-passagedata><tw-passagedata pid="30" name="go down the dark path" tags="" position="3026,1729.5" size="100,100">(t8n:&quot;dissolve&quot;)+(t8n-time:15s)+(link:&quot;//a small light flickers on a cold dark wall in front of you, revealing a dreary message written in blood.//&quot;)[(track: &#39;ominous&#39;, &#39;seek&#39;, 5.5)(track: &#39;ominous&#39;, &#39;fadein&#39;, 3)(track: &#39;ominous&#39;, &#39;fadeout&#39;, 4)
+(after: 3s)[(track: &#39;faint&#39;, &#39;play&#39;)]</tw-passagedata><tw-passagedata pid="30" name="go down the dark path" tags="" position="3027,1727.5" size="100,100">(t8n:&quot;dissolve&quot;)+(t8n-time:15s)+(link:&quot;//a small light flickers on a cold dark wall in front of you, revealing a dreary message written in blood.//&quot;)[(track: &#39;ominous&#39;, &#39;seek&#39;, 5.5)(track: &#39;ominous&#39;, &#39;fadein&#39;, 3)(track: &#39;ominous&#39;, &#39;fadeout&#39;, 4)
 
 
 
@@ -321,7 +323,11 @@ The barista looks at him in confusion. Other customers awkwardly walk around Bob
 
 
 
-(text-style:&quot;bold&quot;,&quot;shudder&quot;)[(text-colour:red)[(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;=XXX=&quot;)[####[[YOU SHOULD NOT BE HERE-&gt;the door]]]]]]</tw-passagedata><tw-passagedata pid="31" name="the door" tags="" position="2961,1859.5" size="100,100">a large, metal door sits by the wall, an (text-colour:red)[ominous] aura flows from it, a blue key is required to open the door
+(text-style:&quot;bold&quot;,&quot;shudder&quot;)[(text-colour:red)[(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;=XXX=&quot;)[####[[YOU SHOULD NOT BE HERE-&gt;the door]]]]]]
+
+(track: &#39;street&#39;, &#39;fadeout&#39;, 2)
+(track: &#39;breeze&#39;, &#39;fadeto&#39;, 2, 0.05)
+(tracK: &#39;breeze2&#39;, &#39;fadeto&#39;, 2, 0.05)</tw-passagedata><tw-passagedata pid="31" name="the door" tags="" position="2961,1859.5" size="100,100">(set: $bluekey to true)a large, metal door sits by the wall, an (text-colour:red)[ominous] aura flows from it, a blue key is required to open the door
 
 (if: $bluekey is true)[[[open door with blue key-&gt;door]]](else:)[[[turn around-&gt;look around]]]</tw-passagedata><tw-passagedata pid="32" name="broom closet" tags="" position="1717,902.5" size="100,100">Bob steps inside the broom closet, there is nothing in here for Bob. 
 
@@ -426,7 +432,7 @@ The barista looks at him in confusion. Other customers awkwardly walk around Bob
 
 (click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[He decides that he must find a way to free his boss. But first Bob needs a key, he does not know where he can find one.](click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[(dialog: &quot;If only my friend who often goes to the coffee shop was here. He has the key that can open this jail cell. We built this place together after all... wait, why am I telling you this? Nevermind that ok?&quot;, &quot;continue&quot;)]
 
-(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[(t8n-arrive:&quot;dissolve&quot;)+(t8n-time:3s)[[Bob suddenly decides that he should go home and sleep.-&gt;go to sleep]]]]]]]</tw-passagedata><tw-passagedata pid="42" name="use silver key to open jail door" tags="" position="1174,1656.5" size="100,100">(if:visits is 1)[(set: $ending to it + 1)](t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob opens the jail door with the silver key, to the boss&#39;s surprise.](click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[(dialog: &quot;What... what is this?&quot;, &quot;continue&quot;)]
+(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[(t8n-arrive:&quot;dissolve&quot;)+(t8n-time:3s)[[Bob suddenly decides that he should go home and sleep.-&gt;go to sleep]]]]]]]</tw-passagedata><tw-passagedata pid="42" name="use silver key to open jail door" tags="" position="1156,1656.5" size="100,100">(if:visits is 1)[(set: $ending to it + 1)](t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob opens the jail door with the silver key, to the boss&#39;s surprise.](click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[(dialog: &quot;What... what is this?&quot;, &quot;continue&quot;)]
 
 (click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[The boss looks very confused.]
 
@@ -550,7 +556,11 @@ The barista looks at him in confusion. Other customers awkwardly walk around Bob
 (t8n-arrive:&quot;dissolve&quot;)+(t8n-time:3s)(click-goto:?page,&quot;computer menu&quot;)]]
 
 (track: &#39;metaldoor&#39;, &#39;seek&#39;, 12)
-(track: &#39;metaldoor&#39;, &#39;fadeout&#39;, 3)</tw-passagedata><tw-passagedata pid="56" name="return to the apartment" tags="" position="2123,169.5" size="100,100">Bob goes back into his apartment.
+(track: &#39;metaldoor&#39;, &#39;play&#39;, 3)
+(after: 3s)[(track: &#39;metaldoor&#39;, &#39;fadeout&#39;, 2)]
+(track: &#39;street&#39;, &#39;fadeout&#39;, 2)
+(track: &#39;breeze&#39;, &#39;fadeto&#39;, 2, 0.15)
+(tracK: &#39;breeze2&#39;, &#39;fadeto&#39;, 2, 0.15)</tw-passagedata><tw-passagedata pid="56" name="return to the apartment" tags="" position="2123,169.5" size="100,100">Bob goes back into his apartment.
 
 (if: $nocoffee is false)[[[leave the apartment-&gt;leave the apartment]]](else:)[[[leave the apartment -&gt; leave the apartment 2]]]
 [[go to the bathroom]]
@@ -932,7 +942,7 @@ Norman&quot;, &quot;exit&quot;)]
 (t8n-arrive:&quot;blur&quot;)+(t8n-time:4s)(click-goto:?page,&quot;intro&quot;)
 
 (group: &#39;playing&#39;, &#39;stop&#39;)(track: &#39;title&#39;, &#39;loop&#39;, true)(track: &#39;title&#39;, &#39;fadein&#39;, 8)
-</tw-passagedata><tw-passagedata pid="88" name="hal.tracks" tags="" position="1130,45.5" size="100,100">title: ./audio/title_music.mp3
+</tw-passagedata><tw-passagedata pid="88" name="hal.tracks" tags="" position="1131,39.5" size="100,100">title: ./audio/title_music.mp3
 door: ./audio/door.mp3
 alarm: ./audio/alarm.mp3
 yawn: ./audio/yawn.mp3
@@ -978,7 +988,8 @@ running: ./audio/running.mp3
 carhorn: ./audio/carhorn.mp3
 car: ./audio/car.mp3
 carcrash: ./audio/carcrash.mp3
-breeze2: ./audio/breeze.mp3</tw-passagedata><tw-passagedata pid="89" name="start" tags="" position="1530,22" size="100,100">
+breeze2: ./audio/breeze.mp3
+metaldoor: ./audio/metaldoor.mp3</tw-passagedata><tw-passagedata pid="89" name="start" tags="" position="1530,22" size="100,100">
 
 
 

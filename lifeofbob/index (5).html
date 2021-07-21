@@ -9,7 +9,7 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play index.</tw-noscript></noscript></tw-story>
-<tw-storydata name="index" startnode="28" creator="Twine" creator-version="2.3.14" ifid="2FB68BE1-5079-4AB3-9B24-265EB65B0884" zoom="1" format="Harlowe" format-version="3.2.2" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+<tw-storydata name="index" startnode="55" creator="Twine" creator-version="2.3.14" ifid="2FB68BE1-5079-4AB3-9B24-265EB65B0884" zoom="1" format="Harlowe" format-version="3.2.2" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&display=swap');
 
 img {
@@ -301,7 +301,7 @@ The barista looks at him in confusion. Other customers awkwardly walk around Bob
 (track: &#39;breeze2&#39;, &#39;volume&#39;, 0.2)
 (track: &#39;street&#39;, &#39;fadeto&#39;, 2, 0.2)
 (track: &#39;breeze&#39;, &#39;loop&#39;, true)(track: &#39;breeze&#39;, &#39;fadein&#39;, 2)
-(after: 4s)[(track: &#39;breeze2&#39;, &#39;loop&#39;, true)(track: &#39;breeze2&#39;, &#39;play&#39;)]</tw-passagedata><tw-passagedata pid="28" name="go deeper" tags="" position="2968,1588.5" size="100,100">//there&#39;s a dark path, and a blue-lit path
+(after: 4s)[(track: &#39;breeze2&#39;, &#39;loop&#39;, true)(track: &#39;breeze2&#39;, &#39;play&#39;)]</tw-passagedata><tw-passagedata pid="28" name="go deeper" tags="" position="2967,1588.5" size="100,100">//there&#39;s a dark path, and a blue-lit path
 //
 (t8n-arrive:&quot;blur&quot;)+(t8n-time:2s)[[go down the blue path-&gt;go down the blue path]]
 [[go down the dark path]]
@@ -549,7 +549,7 @@ The barista looks at him in confusion. Other customers awkwardly walk around Bob
 
 (click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[//a dusty computer sits on the desk//
 
-(t8n:&quot;dissolve&quot;)+(t8n-time:3s)+(link:&quot;turn on the computer&quot;)[//the screen whirs to life//
+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)+(link:&quot;turn on the computer&quot;)[(track: &#39;computer&#39;, &#39;play&#39;)//the screen whirs to life//
 
 (click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[//a small menu pops up on the screen//]
 
@@ -607,7 +607,7 @@ The barista looks at him in confusion. Other customers awkwardly walk around Bob
 
 (t8n-depart:&quot;blur&quot;)+(t8n-arrive:&quot;blur&quot;)+(t8n-time:3s)[[RDEACTED-&gt;RDEACTED]]
 
-
+(track: &#39;computer&#39;, &#39;fadeout&#39;, 3)
 
 
 
@@ -732,7 +732,7 @@ Boss: Well, alright then. Don&#39;t worry, you&#39;ll have some company soon. &#
 
 (click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Ending $ending/7: What A Pain In My Buttocks]
 (click-goto:?page,&quot;wake up&quot;)
-</tw-passagedata><tw-passagedata pid="65" name="Run Current Bob Iteration" tags="" position="3202,2231.5" size="100,100">(if:visits is 1)[(set: $ending to it + 1)](t8n:&quot;dissolve&quot;)+(t8n-time:3s)[(track: &#39;secretending&#39;, &#39;seek&#39;, 4)(track: &#39;secretending&#39;, &#39;fadein&#39;, 1)(track: &#39;secretending&#39;, &#39;fadeout&#39;, 2)Ending $ending/7: #70 Bob Iteration
+</tw-passagedata><tw-passagedata pid="65" name="Run Current Bob Iteration" tags="" position="3202,2232.5" size="100,100">(if:visits is 1)[(set: $ending to it + 1)](t8n:&quot;dissolve&quot;)+(t8n-time:3s)[(track: &#39;secretending&#39;, &#39;seek&#39;, 4)(track: &#39;secretending&#39;, &#39;fadein&#39;, 1)(track: &#39;secretending&#39;, &#39;fadeout&#39;, 2)Ending $ending/7: #70 Bob Iteration
 ]
 (t8n-arrive:&quot;blur&quot;)+(t8n-time:3s)(click-goto:?page,&quot;wake up&quot;)
 
@@ -989,7 +989,8 @@ carhorn: ./audio/carhorn.mp3
 car: ./audio/car.mp3
 carcrash: ./audio/carcrash.mp3
 breeze2: ./audio/breeze.mp3
-metaldoor: ./audio/metaldoor.mp3</tw-passagedata><tw-passagedata pid="89" name="start" tags="" position="1530,22" size="100,100">
+metaldoor: ./audio/metaldoor.mp3
+computer: ./audio/computer.mp3</tw-passagedata><tw-passagedata pid="89" name="start" tags="" position="1530,22" size="100,100">
 
 
 

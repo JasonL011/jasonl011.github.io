@@ -9,7 +9,7 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play index.</tw-noscript></noscript></tw-story>
-<tw-storydata name="index" startnode="38" creator="Twine" creator-version="2.3.14" ifid="2FB68BE1-5079-4AB3-9B24-265EB65B0884" zoom="1" format="Harlowe" format-version="3.2.2" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+<tw-storydata name="index" startnode="57" creator="Twine" creator-version="2.3.14" ifid="2FB68BE1-5079-4AB3-9B24-265EB65B0884" zoom="1" format="Harlowe" format-version="3.2.2" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&display=swap');
 
 img {
@@ -203,7 +203,7 @@ The barista looks at him in confusion. Other customers awkwardly walk around Bob
 (track: &#39;city&#39;, &#39;fadeout&#39;, 3)
 (track: &#39;street&#39;, &#39;loop&#39;, true)(track: &#39;street&#39;, &#39;fadein&#39;, 3)</tw-passagedata><tw-passagedata pid="12" name="floor" tags="" position="3004,789.5" size="100,100">Bob continues to sit on the floor.
 
-(if:visits is 1)[The barista grows more irritated by Bob&#39;s stubborn behavior.](else-if:visits &gt;= 2)[The barista finally looks over at Bob, &quot;Are you just going to keep sitting there? This is your last chance to get up.&quot;]
+(if:visits is 1)[The barista grows more irritated by Bob&#39;s stubborn behavior.](else-if:visits &gt;= 2)[(track: &#39;annoyed&#39;, &#39;play&#39;)The barista finally looks over at Bob, &quot;Are you just going to keep sitting there? This is your last chance to get up.&quot;]
 
 (if:visits &gt;= 2)[[[continue to sit -&gt; floor2]]](else:)[[[continue to sit -&gt;floor]]]
 [[get up -&gt; coffee shop]]
@@ -313,7 +313,7 @@ The barista looks at him in confusion. Other customers awkwardly walk around Bob
 
 (track: &#39;carhorn&#39;, &#39;play&#39;)</tw-passagedata><tw-passagedata pid="24" name="go to the alley" tags="" position="3141,1106.5" size="100,100">(text-colour:red)+(text-style:&quot;bold&quot;,&quot;rumble&quot;)[What does Bob think he&#39;s doing?]
 
-[[look around -&gt; look around 2]]</tw-passagedata><tw-passagedata pid="25" name="stand still" tags="" position="2940,1254.5" size="100,100">(if:visits is 1)[(set: $ending to it + 1)](t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob stands still, the car crashes into Bob and his body is shattered. People on the street looks in horror at Bob&#39;s dead body.]
+[[look around -&gt; look around 2]]</tw-passagedata><tw-passagedata pid="25" name="stand still" tags="" position="2791,1261.5" size="100,100">(if:visits is 1)[(set: $ending to it + 1)](t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob stands still, the car crashes into Bob and his body is shattered. People on the street looks in horror at Bob&#39;s dead body.]
 
 (click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Ending $ending/7: Tragedy]
 (t8n-arrive:&quot;flicker&quot;)+(t8n-time:3s)(click-goto:?page,&quot;wake up&quot;)
@@ -446,7 +446,7 @@ The barista looks at him in confusion. Other customers awkwardly walk around Bob
 
 (if:(history: where its name is &quot;go down the stairs 1&quot;)&#39;s length &gt;= 1)[[[go down the stairs -&gt;go down the stairs 2]]](else:)[[go down the stairs -&gt;go down the stairs 1]]]
 
-(track: &#39;button&#39;, &#39;play&#39;)</tw-passagedata><tw-passagedata pid="39" name="take down the painting" tags="" position="908,1406.5" size="100,100">(set: $rippedpainting to true)Bob rips the painting apart violently, wasting a perfectly good painting. There is nothing behind it except for a blank wall.
+(track: &#39;button&#39;, &#39;play&#39;)		</tw-passagedata><tw-passagedata pid="39" name="take down the painting" tags="" position="908,1406.5" size="100,100">(set: $rippedpainting to true)Bob rips the painting apart violently, wasting a perfectly good painting. There is nothing behind it except for a blank wall.
 
 [[check the desk]]
 [[check the window]]
@@ -506,7 +506,7 @@ The barista looks at him in confusion. Other customers awkwardly walk around Bob
 [[check under the bed]]
 
 (group: &#39;playing&#39;, &#39;stop&#39;)(track: &#39;city&#39;, &#39;loop&#39;, true)(track: &#39;city&#39;, &#39;fadein&#39;, 6)
-(track: &#39;alarm&#39;, &#39;play&#39;)(after: 2.5s)[(track: &#39;alarm&#39;, &#39;fadeout&#39;, 0.3)(track: &#39;yawn&#39;, &#39;play&#39;)](after: 3.5s)[(track: &#39;yawn&#39;, &#39;stop&#39;)]</tw-passagedata><tw-passagedata pid="44" name="gaze outside" tags="" position="2764,793.5" size="100,100">(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob looks at the streets.]
+(track: &#39;alarm&#39;, &#39;play&#39;)(after: 2.5s)[(track: &#39;alarm&#39;, &#39;fadeout&#39;, 0.3)(track: &#39;yawn&#39;, &#39;play&#39;)](after: 3.5s)[(track: &#39;yawn&#39;, &#39;stop&#39;)]</tw-passagedata><tw-passagedata pid="44" name="gaze outside" tags="" position="2763,793.5" size="100,100">(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Bob looks at the streets.]
 
 (click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[&quot;New to the city?&quot; Job adds, &quot;well it&#39;s certainly got its fancies. It&#39;s got a name, but us fellows don&#39;t really use it that much anymore, doesn&#39;t really roll well with the tongue. We just call it the city.&quot;]
 
@@ -636,7 +636,7 @@ The barista looks at him in confusion. Other customers awkwardly walk around Bob
 (track: &#39;door&#39;, &#39;seek&#39;, 0.5)
 (track: &#39;door&#39;, &#39;play&#39;)
 
-(track: &#39;coffeeshop&#39;, &#39;fadeout&#39;, 1)(track: &#39;city&#39;, &#39;loop&#39;, true)(track: &#39;city&#39;, &#39;seek&#39;, 15)(track: &#39;city&#39;, &#39;fadein&#39;, 3)</tw-passagedata><tw-passagedata pid="57" name="computer menu" tags="" position="2938,2119.5" size="100,100">###Narration Logs
+(track: &#39;coffeeshop&#39;, &#39;fadeout&#39;, 1)(track: &#39;city&#39;, &#39;loop&#39;, true)(track: &#39;city&#39;, &#39;seek&#39;, 15)(track: &#39;city&#39;, &#39;fadein&#39;, 3)</tw-passagedata><tw-passagedata pid="57" name="computer menu" tags="" position="2938,2120.5" size="100,100">###Narration Logs
 ####Below are logs from previous interactions between older iterations of Bob and the Narrator.
 
 &#96;[REDACTED]&#96;
@@ -698,7 +698,7 @@ The barista looks at him in confusion. Other customers awkwardly walk around Bob
 
 
 
-</tw-passagedata><tw-passagedata pid="58" name="#9 Bob Iteration" tags="" position="2673,2273.5" size="100,100">Narrator: Bob wakes up in his apartment in the city. He is a human. He has eyes and eyebrows and eyelashes and a nose. Perhaps his most distinctive feature is how average a person he is. He looks around his room.
+</tw-passagedata><tw-passagedata pid="58" name="#9 Bob Iteration" tags="" position="2676,2274.5" size="100,100">Narrator: Bob wakes up in his apartment in the city. He is a human. He has eyes and eyebrows and eyelashes and a nose. Perhaps his most distinctive feature is how average a person he is. He looks around his room.
 
 Narrator: Bob checks the clock, it reads 7:45. There is not much else to say here.
 
@@ -805,13 +805,15 @@ Boss: Well, alright then. Don&#39;t worry, you&#39;ll have some company soon. &#
 
 (click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[(track: &#39;ending&#39;, &#39;play&#39;)Ending $ending/7: What A Pain In My Buttocks]
 (click-goto:?page,&quot;wake up&quot;)
-</tw-passagedata><tw-passagedata pid="65" name="Run Current Bob Iteration" tags="" position="3203,2230.5" size="100,100">(if:visits is 1)[(set: $ending to it + 1)]//the room fades to black and Bob dissipates into nothingness//
+</tw-passagedata><tw-passagedata pid="65" name="Run Current Bob Iteration" tags="" position="3199,2232.5" size="100,100">(if:visits is 1)[(set: $ending to it + 1)]//the room fades to black and Bob dissipates into nothingness//
 
-(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[(track: &#39;secretending&#39;, &#39;seek&#39;, 4)(track: &#39;secretending&#39;, &#39;fadein&#39;, 1)(track: &#39;secretending&#39;, &#39;fadeout&#39;, 2)Ending $ending/7: #70 Bob Iteration
-]
+(click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[(track: &#39;secretending&#39;, &#39;seek&#39;, 4)(track: &#39;secretending&#39;, &#39;fadein&#39;, 1)(track: &#39;secretending&#39;, &#39;fadeout&#39;, 2)Ending $ending/7: #70 Bob Iteration
+
 (t8n-arrive:&quot;blur&quot;)+(t8n-time:3s)(click-goto:?page,&quot;wake up&quot;)
 
-</tw-passagedata><tw-passagedata pid="66" name="walk outside" tags="" position="2082,793.5" size="100,100">(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Suddenly, Bob stops at the entrance of the shop. He proceeds to scratch his neck, his eyebrows furrows–he is thinking about something.]
+(track: &#39;breeze&#39;, &#39;fadeout&#39;, 2)
+(track: &#39;breeze2&#39;, &#39;fadeout&#39;, 2)
+]</tw-passagedata><tw-passagedata pid="66" name="walk outside" tags="" position="2082,793.5" size="100,100">(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[Suddenly, Bob stops at the entrance of the shop. He proceeds to scratch his neck, his eyebrows furrows–he is thinking about something.]
 
 (click:?page)+(t8n:&quot;dissolve&quot;)+(t8n-time:3s)[He looks around uneasily. He feels as if someone is watching him, detailing all his actions and gestures, and even has burrowed into his mind to gain access to his every thought and emotion.]
 
@@ -1105,7 +1107,8 @@ computer: ./audio/computer.mp3
 relief: ./audio/relief.m4a
 flooropen: ./audio/flooropen.mp3
 scratching: ./audio/scratching.mp3
-prison: ./audio/prison.mp3</tw-passagedata><tw-passagedata pid="89" name="start" tags="" position="1532,17" size="100,100">
+prison: ./audio/prison.mp3
+annoyed: ./audio/femalesigh.mp3</tw-passagedata><tw-passagedata pid="89" name="start" tags="" position="1532,17" size="100,100">
 
 
 
